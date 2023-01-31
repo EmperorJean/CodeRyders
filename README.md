@@ -28,9 +28,8 @@ cd api/
 npm i
 npm start
 ```
+Commit by: Joash
 
 Commit by: Luis
-
-Commit by: Joash
 
 You should then be able to visit `localhost:9000` in your browser and see the server running.
