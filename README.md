@@ -17,6 +17,7 @@ npm start
 
 You should then be able to visit `localhost:3000` in your browser and see the client running. If you make changes in the `App.js` file, you should see them reflected.
 
+Commit by: Michael
 ## API
 In order to run the server, you'll run the following commands:
 
@@ -27,9 +28,3 @@ npm start
 ```
 
 You should then be able to visit `localhost:9000` in your browser and see the server running.
-
-
-
-
-
-Commit by: Michael
