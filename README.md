@@ -3,7 +3,7 @@
 ## Getting Started
 
 Parsua was here :)
-Commit by: Jean
+
 This skeleton contains two different applications -- a front end, or "client," created with "Create React App," and a back end, or "API," created with Express. 
 
 In order to make both of them work together, you'll need to run both, but you can run just one or the other to start. As you begin working on this project, you'll first focus on the client, so you can more or less ignore the API portion of the code for now.
@@ -28,18 +28,14 @@ cd api/
 npm i
 npm start
 ```
+Commit by: Joash
 
 Commit by: Luis
 
+Commit by: Luis
+
+Commit by: Jean
+
+Commit by: Muno
+
 You should then be able to visit `localhost:9000` in your browser and see the server running.
-<<<<<<< HEAD
-
-new commit from Muno
-
-
-
-
-
-commit by Joash!
-=======
->>>>>>> 39a64291d662c66458232b6fe84aeacc982643a5
