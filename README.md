@@ -11,7 +11,7 @@ In order to make both of them work together, you'll need to run both, but you ca
 ## Client
 In order to run the client, you'll run the following commands:
 
-```bash
+
 cd client/
 npm i
 npm start
@@ -23,7 +23,7 @@ Commit by: Michael
 ## API
 In order to run the server, you'll run the following commands:
 
-```bash
+
 cd api/
 npm i
 npm start
@@ -35,5 +35,7 @@ Commit by: Luis
 Commit by: Luis
 
 Commit by: Jean
+
+Commit by: Muno
 
 You should then be able to visit `localhost:9000` in your browser and see the server running.
