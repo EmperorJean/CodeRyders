@@ -11,7 +11,7 @@ In order to make both of them work together, you'll need to run both, but you ca
 ## Client
 In order to run the client, you'll run the following commands:
 
-
+```bash
 cd client/
 npm i
 npm start
@@ -19,11 +19,10 @@ npm start
 
 You should then be able to visit `localhost:3000` in your browser and see the client running. If you make changes in the `App.js` file, you should see them reflected.
 
-Commit by: Michael
 ## API
 In order to run the server, you'll run the following commands:
 
-
+```bash
 cd api/
 npm i
 npm start
