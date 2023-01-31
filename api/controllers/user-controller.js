@@ -5,6 +5,26 @@ const getUser = async (req, res) => {
   });
 }
 
+const registerUser =  (req, res) => {
+res.json({message: 'Register User'})
+}
+
+const loginUser =  (req, res) => {
+  res.json({message: 'Login User'})
+  }
+
+  
+  const meUser =  (req, res) => {
+    res.json({message: 'User display'})
+    }
+    
+
+
+
 module.exports = {
   getUser,
+  registerUser,
+  loginUser,
+  meUser
+
 };
