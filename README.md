@@ -28,6 +28,9 @@ cd api/
 npm i
 npm start
 ```
+Commit by: Joash
+
+Commit by: Luis
 
 Commit by: Luis
 
