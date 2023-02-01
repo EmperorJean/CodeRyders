@@ -1,0 +1,38 @@
+/* Here you can edit all the attributes that we decide that we end up needing */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+#patientCard {
+    background-color: black;
+
+}
+
+#container {
+    display: flex;
+    padding: 1rem;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#containerLeft{
+    margin-right: 10px;
+    display: flex;
+}
+
+#containerRight {
+    display: flex;
+    flex-direction: column;
+}
+
+#image {
+    width: 300px;
+}
+
+p {
+    text-align: left;
+    font-size: 15pt;
+    color: white;
+}
