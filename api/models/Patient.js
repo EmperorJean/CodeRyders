@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const PatientSchema = new mongoose.Schema({
     _id: String,
     patientId: String,
     age: Number,
@@ -14,4 +14,4 @@ const userSchema = new mongoose.Schema({
     imageURL: String
 });
 
-module.exports = mongoose.model("Patients", userSchema);
+module.exports = mongoose.model("Patients", PatientSchema);
