@@ -25,7 +25,9 @@ const loginUser = asyncHandler(async (req, res) => {
     res.status(400)
     throw new Error('Invalid credentials')
   }
+
 })
+
 
 const createUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body
