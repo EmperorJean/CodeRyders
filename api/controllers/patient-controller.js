@@ -26,7 +26,7 @@ const doGetPatientWithId = async(id) => {
 
   patient = await PATIENT.findOne({
     patientId: id,
-})
+  });
 
 if(!patient) return `No patient found with that Id`; 
 return patient;
