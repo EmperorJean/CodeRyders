@@ -1,38 +1,20 @@
 /* Here you can edit all the attributes that we decide that we end up needing */
-
-* {
-    padding: 0;
-    margin: 0;
-}
-#patientCard {
-    background-color: black;
-
-}
-
-#container {
-    display: flex;
-    padding: 1rem;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-#containerLeft{
-    margin-right: 10px;
-    display: flex;
-}
-
-#containerRight {
+#ExamItem {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-#image {
-    width: 300px;
+#heading {
+    margin-left: 4rem;
+    margin-bottom: 20rem;
+    color: black;
 }
 
-p {
-    text-align: left;
-    font-size: 15pt;
-    color: white;
+#heading h1 {
+    font-size: 6rem;
+}
+
+#heading h4 {
+    font-size: 2.5rem;
 }
