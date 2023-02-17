@@ -1,31 +1,35 @@
 import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import './App.css';
+
+// pages
 import CreateForm from './pages/CreateForm';
-//import { Patient } from './hooks/Patient';
+import { Patient } from './pages/Patient';
+import Home from './pages/Home';
+import ExamSingle from './pages/ExamSingle';
+import Exams from './pages/Exams';
+import ExamAdmin from './pages/ExamAdmin';
+
+// components
+import { Nav } from './components/Navigation';
 //import { useApi } from './hooks/use-api';
 
 function App() {
   //const { response } = useApi();
 
   return (
-    
-    <div>
-      <CreateForm />
-    </div>
-//    <div className="App">
-//       <header className="App-header">
-//         <div>
-
-//           {/* Run a for loop and pass in the data instead of hard codding for each piece of data , file to edit it is located in client/src/hooks/Patient.js*/}
-//           <Patient  id = "61e83d679dc59e6e8e11a1cb" patientId = "COVID-19-AR-16424082" age = "48" sex = "M" zipCode = "721" bmi = "29.8" v = "0" examId = "Exam-2"
-//                     keyFindings = "significant worsening of airspace disease, now very extensive and patchy sparing only apices."
-//                     brixiaScores = "1,2,3,4"
-//                     imageUrl = "https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/COVID-19-AR-16424082_XR_CHEST_AP_PORTABLE_2.png"
-//  />
-
-//         </div>
-      //</header>
-   // </div>
+    <>
+    <Nav />
+     <Routes>
+     <Route path="/" element={<Home />} />
+     <Route path="/exams" element={<Exams />} />
+     <Route path="/admin" element={<ExamAdmin />} />
+     <Route path="/create" element={<CreateForm />} />
+     <Route path="/exams/:id" element={<ExamSingle />} />
+     <Route path="/patient/:id" element={<Patient />} />
+      
+    </Routes>
+    </>
   );
 }
 
