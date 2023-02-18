@@ -13,7 +13,7 @@ const handleErrors = async (error, username) => {
     errors.email = "An account has already been registered with that email";
   }
 
-  // duplicate error: if user username already exists in db
+  // duplicate error: if username already exists in db
   const usernameExists = await User.findOne({ username });
   if (usernameExists) {
     errors.username = "This username already exists";
@@ -62,7 +62,7 @@ const createUser = asyncHandler(async (req, res) => {
 
   try {
     const user = await User.create({ username, email, password });
-    res.status(201).json(user);
+    res.status(201).json({user: user._id});
   }
   catch (error) {
     const errors = handleErrors(error, user.username);
