@@ -4,7 +4,7 @@ import './App.css';
 
 // pages
 import CreateForm from './pages/CreateForm';
-import { Patient } from './pages/Patient';
+import { Patient, Patients } from './pages/Patient';
 import Home from './pages/Home';
 import ExamSingle from './pages/ExamSingle';
 import Exams from './pages/Exams';
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-    <Nav />
+    <Nav /> 
      <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/exams" element={<Exams />} />
@@ -27,6 +27,7 @@ function App() {
      <Route path="/create" element={<CreateForm />} />
      <Route path="/exams/:id" element={<ExamSingle />} />
      <Route path="/patient/:id" element={<Patient />} />
+     <Route path="/patient" element={<Patients />} />
       
     </Routes>
     </>

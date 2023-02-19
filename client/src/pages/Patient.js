@@ -1,11 +1,19 @@
 import { useApi } from "../hooks/use-api";
 import { PatientExamItem as Item} from "../components/PatientExamItem";
+import { PatientItem as PATIENT} from "../components/PatientItem";
 import "../css/Patient.css"
-export const Patient = (props) => {
-  const { response } = useApi({ path: "patient/COVID-19-AR-16406502" });
+import { useParams } from "react-router-dom";
 
+
+export const Patient = (props) => {
+let {id} = useParams();
+console.log(id)
+const { response } = useApi({ path: `patients/${id}` });
+
+console.log(response)
   let messages = [];
   let patientId, numExams
+
   if (response) {
     messages = JSON.parse(response).message;
     console.log(messages);
@@ -35,3 +43,28 @@ export const Patient = (props) => {
     </>
   );
 };
+
+export const Patients = (props) => {
+
+    const { response } = useApi({ path: `patient` });
+      let messages = [];
+      let ids = [];
+    
+      if (response) {
+        messages = JSON.parse(response).message;
+    
+        for (let i = 0; i < messages.length; i++) {
+          ids.push(messages[i].patientId)
+        }
+        
+      }
+
+      return (
+        <>
+         {ids.map((id) => (
+              <PATIENT id = {id}/>
+      ))}
+          
+        </>
+      );
+    };
