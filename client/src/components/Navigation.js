@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useApi } from "../hooks/use-api";
 import "../css/Nav.css"
 export const Nav = (props) => {
 

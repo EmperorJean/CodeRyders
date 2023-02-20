@@ -1,4 +1,3 @@
-import { useApi } from "../hooks/use-api";
 import "../css/PatientItem.css"
 
 export const PatientExamItem = (props) => {
