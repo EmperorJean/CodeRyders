@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 export const Patient = (props) => {
 let {id} = useParams();
 console.log(id)
-const { response } = useApi({ path: `patients/${id}` });
+const { response } = useApi({ path: `patient/${id}` });
 
 console.log(response)
   let messages = [];
