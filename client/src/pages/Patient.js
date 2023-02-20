@@ -52,7 +52,7 @@ export const Patients = (props) => {
     const { response } = useApi({ path: `patient` });
       let messages = [];
       let ids = [];
-    
+      
       if (response) {
         messages = JSON.parse(response).message;
     
@@ -60,7 +60,7 @@ export const Patients = (props) => {
           if(!ids.includes(messages[i].patientId))
             ids.push(messages[i].patientId)
         }
-        
+      console.log(response);
       }
 
       return (
