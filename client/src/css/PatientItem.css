@@ -1,0 +1,80 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+#item{
+    margin: 1rem;
+    display: flex;
+    width: 80vw;
+    border-radius: 1rem;
+    color: white;
+    max-width: 1280px;
+}
+
+#itemLeft {
+background-color: green;
+}
+
+#itemLeft img {
+    width: 200px;
+    
+border-radius: 1rem;
+}
+#itemRight {
+position: relative;
+margin-left: 1rem;
+justify-content: center;
+width: 100%;
+padding: 1rem;
+background-color: rgba(0, 0, 0, 0.137);
+border-radius: 1rem;
+}
+
+#title {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+#desc {
+font-size: 13pt;
+}
+
+#bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
+}
+
+#version{
+    bottom: 0;
+    left: 0;
+}
+
+#brixia{
+    bottom: 0;
+    right: -10;
+}
+
+#titleItems {
+    font-size: 50pt;
+    color: black;
+    margin: 2rem;
+    margin-bottom: 20rem;
+    font-weight: 500;
+}
+
+
+#heading a {
+    color: rgba(34, 34, 34, 0.445);
+    font-size: 25pt;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#heading a:hover {
+    color: rgb(0, 0, 0);
+}

@@ -5,7 +5,6 @@ const getPatient = async (req, res) => {
   
 
   var data = await doGetPatient()
-  console.log(data)
   return res.status(200).json({
     success: true,
     message: data
@@ -23,8 +22,7 @@ const getPatientWithId = async (req, res) => {
   }
 
 const doGetPatientWithId = async(id) => {
-
-  patient = await PATIENT.findOne({
+  patient = await PATIENT.find({
     patientId: id,
 })
 
