@@ -59,8 +59,12 @@ function CreateForm(){
         <br /><br />
         <h3>Create Exam</h3><br />
         <form>
-            <div class="form-row">
 
+            <button type="button" className="btn btn-primary">Add Exam</button> 
+            <button type="button" className="btn btn-primary">Random Exam</button> 
+            <button type="button" className="btn btn-primary">Cancel</button> 
+
+            <div class="form-row">
                 <div className="form-group col-md-6">
                     <label> Patient ID:</label>
                     <input type="text" className="form-control" name="PatientID:" placeholder="Enter your Patient ID..."/>
