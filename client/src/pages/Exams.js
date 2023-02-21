@@ -31,7 +31,7 @@ export const Exams = (props) => {
     const { response } = useApi({path : `patient` });
     let messages = [];
     let ids = [];
-    console.log("__________________________");
+  
     if (response) {
         messages = JSON.parse(response).message;
         console.log("Test in If");
