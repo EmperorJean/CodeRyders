@@ -8,9 +8,12 @@ import { Link, useParams } from "react-router-dom";
 const ExamDisplay = (props) => {
     return (
     <tr>
-        <td>{props.patient.patientId}</td> 
-        <td>{props.patient.examId}</td>
-        {/* <td img = {messages[0].imageURL}></td> */}
+        <td className = "examPageLink">
+            <Link to ={`/patient/${props.patient.patientId}`}>{props.patient.patientId}</Link>
+        </td> 
+        <td className = "examPageLink">
+            <Link to = {`/exam/${props.patient.examId}`}>{props.patient.examId}</Link>
+        </td>
         <td><img src={props.patient.imageURL}/></td>
         <td>{props.patient.keyFindings}</td>
         <td>{props.patient.brixiaScores}</td>
@@ -29,17 +32,12 @@ export const Exams = (props) => {
     console.log("__________________________");
     if (response) {
         messages = JSON.parse(response).message;
-        console.log(messages);
         console.log("Test in If");
     }
-    // for (let i = 0; i < messages.length; i++) {
-    //     ids.push(messages[i].patientId);
-    // }
-    // console.log(ids);
     console.log(messages.length);
     return(
         <>
-        <h1>Hello From Exams</h1>
+        <h1 className='examHeader'>Exams</h1>
 
         <div className='containerExams'>
             <table>
