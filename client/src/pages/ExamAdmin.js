@@ -4,13 +4,40 @@ import 'react-bootstrap'
 import {useApi} from "../hooks/use-api";
 import "../css/Patient.css";
 import { Link, useParams } from "react-router-dom";
-import "../css/ExamPage.css"
+import "../css/ExamAdmin.css"
 
-function ExamAdmin(){
+const AdminDisplay = (props) => {
+    return (
+        <>
+            <tr>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </>
+    );
+};
+
+export const ExamAdmin = (props) => {
+    const { response } = useApi({path : `patient` });
+    let messages = [];
+    let ids = [];
+  
+    if (response) {
+        messages = JSON.parse(response).message;
+    }
+
     return(
         <>
-        <h1>Hello From Exam Admin</h1>
-        <div className='containerExams'>
+        <h1>Admin</h1>
+
+        <div className='containerAdmin'>
             <table>
                 <thead>
                     <tr>
@@ -26,6 +53,7 @@ function ExamAdmin(){
                     </tr>
                 </thead>
                 <tbody>
+                    {/* messages.map function here */}
                 </tbody>
             </table>
         </div>
