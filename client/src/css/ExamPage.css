@@ -1,0 +1,73 @@
+
+.containerExams {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+  table {
+    width: 1000px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  th, td {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  th{
+    text-align: left;
+  }
+  
+  tbody{
+    vertical-align: middle;
+  }
+  
+  td{
+    position: relative;
+  }
+  img{
+    height: 50px;
+  }
+  
+  thead{
+    position: sticky;
+    top: 0;
+  }
+  
+  .containerExams{
+    display: block;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .examPageLink a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  td:hover{
+    background-color: rgba(255,255,255,0.4);
+  }
+  
+.header{
+    margin-bottom: 30rem;
+    margin: 3rem;
+}
+  .examHeader{
+    font-size: 30pt;
+  }
+
+  .examSubheader{
+    font-size: 20pt;
+  }
+  /*
+  background-color: #55608f;
+  */
+  

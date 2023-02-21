@@ -1,12 +1,13 @@
 import React from 'react';
 import 'react-bootstrap';
 import {useApi} from "../hooks/use-api";
-import { PatientItem as PATIENT} from "../components/PatientItem";
 import "../css/Patient.css";
 import { Link, useParams } from "react-router-dom";
+import "../css/ExamPage.css"
 
 const ExamDisplay = (props) => {
     return (
+    <>
     <tr>
         <td className = "examPageLink">
             <Link to ={`/patient/${props.patient.patientId}`}>{props.patient.patientId}</Link>
@@ -22,6 +23,7 @@ const ExamDisplay = (props) => {
         <td>{props.patient.bmi}</td>
         <td>{props.patient.zipCode}</td>
     </tr>
+    </>
     );
 };
 
@@ -37,7 +39,10 @@ export const Exams = (props) => {
     console.log(messages.length);
     return(
         <>
-        <h1 className='examHeader'>Exams</h1>
+        <div className="header">
+            <h1 className='examHeader'>Exams</h1>
+        <p className='examSubheader'>Total Exams: {messages.length}</p>
+        </div>
 
         <div className='containerExams'>
             <table>
