@@ -69,9 +69,12 @@ export const Patients = (props) => {
           Patients List
          <h2>Number of patients: {ids.length}</h2>
          </div>
+         <div className="container">
+          
          {ids.map((id) => (
               <PATIENT id = {id}/>
       ))}
+         </div>
           
         </>
       );

@@ -3,7 +3,7 @@ import "../css/PatientsItem.css"
 export const PatientItem = (props) => {
   return (
     <div>
-        <div >
+        <div id>
             <Link id="itemPatients" to = {props.id} >{props.id}</Link>
         </div>
     </div>
