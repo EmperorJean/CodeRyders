@@ -9,7 +9,7 @@ export function useApi({ path } = { path: '' }) {
     fetch(`${API_ROOT}/${path}`)
       .then(res => res.text())
       .then(res => setResponse(res));
-  }, []);
+  });
 
   return {
     response

@@ -1,13 +1,10 @@
-import { useApi } from "../hooks/use-api";
 import { Link } from "react-router-dom";
-
+import "../css/PatientsItem.css"
 export const PatientItem = (props) => {
-  let route = `patient/${props.id}`  
   return (
     <div>
-        {route += props.id}
-        <div id="item">
-            <Link to = {props.id} >{route}</Link>
+        <div id>
+            <Link id="itemPatients" to = {props.id} >{props.id}</Link>
         </div>
     </div>
   );

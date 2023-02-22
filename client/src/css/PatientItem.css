@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 #item{
     margin: 1rem;
     display: flex;
@@ -7,12 +11,9 @@
     max-width: 1280px;
 }
 
-#itemLeft {
-background-color: green;
-}
-
 #itemLeft img {
     width: 200px;
+    height: 200px;
     
 border-radius: 1rem;
 }
@@ -22,7 +23,7 @@ margin-left: 1rem;
 justify-content: center;
 width: 100%;
 padding: 1rem;
-background-color: black;
+background-color: rgba(0, 0, 0, 0.137);
 border-radius: 1rem;
 }
 
@@ -55,3 +56,22 @@ font-size: 13pt;
     right: -10;
 }
 
+#titleItems {
+    font-size: 50pt;
+    color: black;
+    margin: 2rem;
+    margin-bottom: 20rem;
+    font-weight: 500;
+}
+
+
+#heading a {
+    color: rgba(34, 34, 34, 0.445);
+    font-size: 25pt;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#heading a:hover {
+    color: rgb(0, 0, 0);
+}
