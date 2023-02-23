@@ -67,6 +67,10 @@
   .examSubheader{
     font-size: 20pt;
   }
+  thead.bold{
+    background-color: blue;
+
+  }
   /*
   background-color: #55608f;
   */

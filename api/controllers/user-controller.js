@@ -3,10 +3,8 @@ const asyncHandler = require('express-async-handler')
 const User = require("../models/User");
 
 const getUser = async (req, res) => {
-  return res.status(200).json({
-    success: true,
-    message: 'API is working.'
-  });
+  const user = await User.find({ user: req.params.id })
+    res.status(200).json(user)
 }
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -77,9 +75,24 @@ const logoutUser = asyncHandler(async (req, res) => {
   });
 });
 
+const deleteUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id)
+
+  if (!user) {
+    res.status(400)
+    throw new Error('Exam not found')
+  }
+
+  await user.remove()
+
+  res.status(200).json({ id: req.params.id })
+})
+
 module.exports = {
   getUser,
   loginUser,
   createUser,
   logoutUser,
+  deleteUser,
+  
 };

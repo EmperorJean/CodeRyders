@@ -6,9 +6,12 @@ import './App.css';
 import CreateForm from './pages/CreateForm';
 import { Patient, Patients } from './pages/Patient';
 import Home from './pages/Home';
-import ExamSingle from './pages/ExamSingle';
-import Exams from './pages/Exams';
+import ExamSingle  from './pages/ExamSingle';
+// import Exams from './pages/Exams';
 import ExamAdmin from './pages/ExamAdmin';
+import AllExams from './pages/AllExams'
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 // components
 import { Nav } from './components/Navigation';
@@ -22,7 +25,10 @@ function App() {
     <Nav /> 
      <Routes>
      <Route path="/" element={<Home />} />
-     <Route path="/exams" element={<Exams />} />
+     <Route path="/register" element={<Register  />} />
+     <Route path="/login" element={<Login />} />
+     {/* <Route path="/exams" element={<Exams />} /> */}
+     <Route path="/exams" element={<AllExams />} />
      <Route path="/admin" element={<ExamAdmin />} />
      <Route path="/create" element={<CreateForm />} />
      <Route path="/exams/:id" element={<ExamSingle />} />

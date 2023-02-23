@@ -2,8 +2,8 @@ import React from 'react';
 import 'react-bootstrap';
 import {useApi} from "../hooks/use-api";
 import "../css/Patient.css";
-import { Link, useParams } from "react-router-dom";
 import "../css/ExamPage.css"
+import { Link } from "react-router-dom";
 
 const ExamDisplay = (props) => {
     return (
@@ -13,7 +13,7 @@ const ExamDisplay = (props) => {
             <Link to ={`/patient/${props.patient.patientId}`}>{props.patient.patientId}</Link>
         </td> 
         <td className = "examPageLink">
-            <Link to = {`/exam/${props.patient.examId}`}>{props.patient.examId}</Link>
+            <Link to = {`/exams/${props.patient.examId}`}>{props.patient.examId}</Link>
         </td>
         <td><img src={props.patient.imageURL}/></td>
         <td>{props.patient.keyFindings}</td>
@@ -30,7 +30,6 @@ const ExamDisplay = (props) => {
 export const Exams = (props) => {
     const { response } = useApi({path : `patient` });
     let messages = [];
-    let ids = [];
   
     if (response) {
         messages = JSON.parse(response).message;
@@ -40,11 +39,11 @@ export const Exams = (props) => {
     return(
         <>
         <div className="header">
-            <h1 className='examHeader'>Exams</h1>
+        <h1 className='examHeader'>Exams</h1>
         <p className='examSubheader'>Total Exams: {messages.length}</p>
         </div>
 
-        <div className='containerExams'>
+        <div >
             <table>
                 <thead>
                     <tr>

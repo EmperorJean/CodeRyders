@@ -20,15 +20,7 @@
   color: #61dafb;
 }
 
-/* .row, form, .form-row {
-  text-align: center;
-  display: grid;
-  grid-column-start: 5px;
-  grid-column-end: 100px;
-  align-items: center;
-  justify-content: center;
 
-} */
 
 input.form-control, h3, label {
   display: flex;
