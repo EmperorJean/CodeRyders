@@ -8,11 +8,22 @@ ul {
     
     display: flex;
     flex-direction: row;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 1rem;
     justify-content: space-evenly;
 }
 
 ul li {
     list-style-type: none;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
