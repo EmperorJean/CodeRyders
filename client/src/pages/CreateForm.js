@@ -10,9 +10,11 @@ function CreateForm(){
         <br /><br />
         <h3>Create Exam</h3><br />
         <form>
-                    <button type="button" className="btn btn-primary" id="addBtn">Add Exam</button>
-                    <button type="button" className="btn btn-primary" id="randomBtn">Random Exam</button> 
-                    <button type="button" className="btn btn-primary" id="cancelBtn">Cancel</button> 
+            <div className="formBtns">
+                <button type="button" className="btn btn-primary" id="addBtn">Add Exam</button>
+                <button type="button" className="btn btn-primary" id="randomBtn">Random Exam</button> 
+                <button type="button" className="btn btn-primary" id="cancelBtn">Cancel</button> 
+            </div>
 
             <div className="form-row">
                 
