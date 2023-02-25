@@ -23,8 +23,8 @@ const AdminDisplay = (props) => {
             <td>{props.patient.bmi}</td>
             <td>{props.patient.zipCode}</td>
             <td className="adminButtons">
-                <button className="editButton" onClick={handleClick}>Edit</button>
-                <button className="removeButton" onClick={handleClick}>Remove</button>
+                <button id="update" className="editButton" onClick={handleClick}>Update</button>
+                <button id="remove" className="removeButton" onClick={handleClick}>Remove</button>
             </td>
         </tr>
         </>
