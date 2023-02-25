@@ -1,5 +1,6 @@
 import React from 'react'
 import 'react-bootstrap'
+import "../css/CreateForm.css"
 
 
 function CreateForm(){
@@ -12,19 +13,21 @@ function CreateForm(){
         <br /><br />
         <h3>Create Exam</h3><br />
         <form>
+            <div className="formBtns">
+                <button type="button" className="btn btn-primary" id="addBtn">Add Exam</button>
+                <button type="button" className="btn btn-primary" id="randomBtn">Random Exam</button> 
+                <button type="button" className="btn btn-primary" id="cancelBtn">Cancel</button> 
+            </div>
 
-            <button type="button" className="btn btn-primary">Add Exam</button> 
-            <button type="button" className="btn btn-primary">Random Exam</button> 
-            <button type="button" className="btn btn-primary">Cancel</button> 
-
-            <div class="form-row">
+            <div className="form-row">
+                
                 <div className="form-group col-md-6">
-                    <label> Patient ID:</label>
+                    <label id="patientId"> Patient ID:</label>
                     <input type="text" className="form-control" name="PatientID:" placeholder="Enter your Patient ID..."/>
                 </div>
 
                 <div className="form-group col-md-6">
-                    <label> Exam ID: </label>
+                    <label id="examId"> Exam ID: </label>
                     <input type="text" className="form-control" name="ExamID" placeholder="Enter your ExamID..."/>
                 </div>
 
