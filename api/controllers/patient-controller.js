@@ -24,7 +24,7 @@ const getPatientWithId = async (req, res) => {
 const doGetPatientWithId = async(id) => {
   patient = await PATIENT.find({
     patientId: id,
-})
+  });
 
 if(!patient) return `No patient found with that Id`; 
 return patient;
