@@ -21,7 +21,7 @@
   }
   
   th{
-    text-align: left;
+    text-align: center;
   }
   
   tbody{
@@ -30,6 +30,7 @@
   
   td{
     position: relative;
+    
   }
   img{
     height: 50px;

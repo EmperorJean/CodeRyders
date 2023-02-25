@@ -21,7 +21,7 @@
   }
   
   th{
-    text-align: left;
+    text-align: center;
   }
   
   tbody{
@@ -74,14 +74,14 @@
   /* Temporary CSS for buttons */
   .editButton {
     display: inline-block;
-    color:aqua;
+    color:rgb(0, 221, 221);
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
   }
 
   .removeButton {
     display: inline-block;
-    color: red;
+    color: rgb(173, 0, 0);
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
   }
