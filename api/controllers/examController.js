@@ -36,7 +36,7 @@ const getExam = asyncHandler(async (req, res) => {
       sex: req.body.sex,
       bmi: req.body.bmi,
       zipCode: req.body.zipCode,
-      __v: req.body.__v,
+      // __v: req.body.__v,
       examId: req.body.examId,
       keyFindings: req.body.keyFindings,
       brixiaScores: req.body.brixiaScores,

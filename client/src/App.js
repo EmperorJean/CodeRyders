@@ -14,7 +14,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 
 // components
-import { Nav } from './components/Navigation';
+import  {Nav}  from './components/Navigation';
 //import { useApi } from './hooks/use-api';
 
 function App() {
