@@ -2,8 +2,8 @@ import React from 'react';
 import 'react-bootstrap';
 import {useApi} from "../hooks/use-api";
 import "../css/Patient.css";
-import { Link, useParams } from "react-router-dom";
 import "../css/ExamPage.css"
+import { Link } from "react-router-dom";
 
 const ExamDisplay = (props) => {
     return (
@@ -30,8 +30,7 @@ const ExamDisplay = (props) => {
 export const Exams = (props) => {
     const { response } = useApi({path : `patient` });
     let messages = [];
-    let ids = [];
-    console.log("__________________________");
+  
     if (response) {
         messages = JSON.parse(response).message;
         console.log("Test in If");
@@ -40,7 +39,7 @@ export const Exams = (props) => {
     return(
         <>
         <div className="header">
-            <h1 className='examHeader'>Exams</h1>
+        <h1 className='examHeader'>Exams</h1>
         <p className='examSubheader'>Total Exams: {messages.length}</p>
         </div>
 

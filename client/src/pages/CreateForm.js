@@ -1,77 +1,30 @@
 import React from 'react'
 import 'react-bootstrap'
+import "../css/CreateForm.css"
 
 function CreateForm(){
     return(
-    //     <>
-    //     <div>
-    //         <div className="left">
-                // <div className="form-group col-md-6">
-                //     <label> Patient ID:</label>
-                //     <input type="text" name="PatientID:" placeholder="Enter your Patient ID..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Age: </label>
-                //     <input type="number" name="Age:" placeholder="Enter your Age..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Sex: </label>
-                //     <input type="text" name="Sex" placeholder="Enter your Sex..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> BMI: </label>
-                //     <input type="number" name="BMI" placeholder="Enter your BMI..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Zip Code: </label>
-                //     <input type="number" name="ZipCode" placeholder="Enter your Zip Code..."/>
-                // </div>
-    //         </div>
-
-    //         <div>
-                // <div className="form-group col-md-6">
-                //     <label> Exam ID: </label>
-                //     <input type="text" name="ExamID" placeholder="Enter your ExamID..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Image URL: </label>
-                //     <input type="text" name="ImageURL" placeholder="Enter your Image URL..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Date: </label>
-                //     <input type="date" name="Date" placeholder="Enter the Exam Date..."/>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Key Findings: </label>
-                //     <textarea type="text" name="KeyFindings" placeholder="Enter the Key Findings..."></textarea>
-                // </div>
-                // <div className="form-group col-md-6">
-                //     <label> Brixia Score: (separated by comma) </label>
-                //     <input type="number" name="BrixiaScore" placeholder="Enter Brixia Score..."/>
-                // </div>
-    //         </div>
-    //     </div>
-    //    </>
 <>
-
 <div className="row">
     <div className="col-md-6 offset-md-3">
         <br /><br />
         <h3>Create Exam</h3><br />
         <form>
+            <div className="formBtns">
+                <button type="button" className="btn btn-primary" id="addBtn">Add Exam</button>
+                <button type="button" className="btn btn-primary" id="randomBtn">Random Exam</button> 
+                <button type="button" className="btn btn-primary" id="cancelBtn">Cancel</button> 
+            </div>
 
-            <button type="button" className="btn btn-primary">Add Exam</button> 
-            <button type="button" className="btn btn-primary">Random Exam</button> 
-            <button type="button" className="btn btn-primary">Cancel</button> 
-
-            <div class="form-row">
+            <div className="form-row">
+                
                 <div className="form-group col-md-6">
-                    <label> Patient ID:</label>
+                    <label id="patientId"> Patient ID:</label>
                     <input type="text" className="form-control" name="PatientID:" placeholder="Enter your Patient ID..."/>
                 </div>
 
                 <div className="form-group col-md-6">
-                    <label> Exam ID: </label>
+                    <label id="examId"> Exam ID: </label>
                     <input type="text" className="form-control" name="ExamID" placeholder="Enter your ExamID..."/>
                 </div>
 
