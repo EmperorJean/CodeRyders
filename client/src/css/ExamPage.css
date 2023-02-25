@@ -1,5 +1,3 @@
-::-webkit-scrollbar {
-}
 
 .containerExams {
     position: absolute;
@@ -60,6 +58,7 @@
   
 .header{
     margin-bottom: 30rem;
+    margin: 3rem;
 }
   .examHeader{
     font-size: 30pt;
