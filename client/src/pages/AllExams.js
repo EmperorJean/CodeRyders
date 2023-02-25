@@ -57,7 +57,7 @@ function AllExams(){
        
         <tbody>
           <tr>
-            <th scope="row"> <Link to={`/patient/`}>  { exams.patientId } </Link> </th>
+            <th scope="row"> <Link to={`/patient/${exams.patientId}`}>  { exams.patientId} </Link> </th>
             <td> <Link to={`/exams/${exams._id}`}>  { exams.examId }</Link>  </td>
             <td> <img src={ exams.imageURL }  alt="" /></td>
             <td> { exams.keyFindings } </td>
