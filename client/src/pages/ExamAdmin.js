@@ -14,7 +14,7 @@ const AdminDisplay = (props) => {
         <>
         <tr>
             <td className = "examPageLink"><Link to ={`/patient/${props.patient.patientId}`}>{props.patient.patientId}</Link></td> 
-            <td className = "examPageLink"><Link to = {`/exam/${props.patient.examId}`}>{props.patient.examId}</Link></td>
+            <td className = "examPageLink"><Link to = {`/exams/${props.patient._id}`}>{props.patient.examId}</Link></td>
             <td><img src={props.patient.imageURL}/></td>
             <td>{props.patient.keyFindings}</td>
             <td>{props.patient.brixiaScores}</td>
