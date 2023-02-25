@@ -1,0 +1,16 @@
+#itemPatients {
+    background-color: rgba(0, 0, 0, 0.356);
+    margin: 1rem;
+    text-align: center;
+    padding: 4rem;
+    border-radius: 1rem;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 15pt;
+}
+
+#itemPatients:hover {
+    background-color: rgba(0, 0, 0, 0.13);
+}
+
