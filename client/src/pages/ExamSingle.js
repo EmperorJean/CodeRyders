@@ -19,7 +19,7 @@ function ExamSingle(){
     const fetchSingleExam = () => {
 
       console.log({id})
-      axios.get(`https://coderyders.onrender.com/exams/${id}`)
+      axios.get(`http://localhost:9000/exams/${id}`)
            .then((res) => {
               console.log(res)
               setSingleExam(res.data)
