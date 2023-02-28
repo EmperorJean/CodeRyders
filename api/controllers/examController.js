@@ -41,6 +41,7 @@ const getExam = asyncHandler(async (req, res) => {
       keyFindings: req.body.keyFindings,
       brixiaScores: req.body.brixiaScores,
       imageURL: req.body.imageURL,  
+      __v: req.body.__v
 
   }); 
 
@@ -65,17 +66,17 @@ const getExam = asyncHandler(async (req, res) => {
 // @route   PUT /exam/:id
 
 const updateExam = asyncHandler(async (req, res) => {
-  const exam = await Exam.findById(req.params.id)
+  const {_id} = req.body;
 
-  if (!exam) {
-    res.status(400)
-    throw new Error('Exam not found')
-  }
-
-  const updatedExam = await Exam.findByIdAndUpdate(req.params.id, req.body, {
+  const updatedExam = await Exam.findByIdAndUpdate(_id, req.body, {
     new: true,
   })
 
+  if (!updatedExam) {
+    res.status(400)
+    throw new Error('Exam not found')
+  }
+  
   res.status(200).json(updatedExam)
 })
 
@@ -83,18 +84,16 @@ const updateExam = asyncHandler(async (req, res) => {
 // // @route   DELETE /exam/:id
 
 const deleteExam = asyncHandler(async (req, res) => {
-  const exam = await Exam.findById(req.params.id)
-
+  const exam = await Exam.findById(req.body.exam_id)
+  
   if (!exam) {
     res.status(400)
     throw new Error('Exam not found')
   }
 
-
-
   await exam.remove()
 
-  res.status(200).json({ id: req.params.id })
+  res.status(200).json({ id: req.body.exam_id })
 })
 
 module.exports = {

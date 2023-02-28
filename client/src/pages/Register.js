@@ -33,7 +33,7 @@ export default function Register() {
     const showToast = () =>{
         //toast('Passwords do not match')
     }
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
    
         if (user.password !== user.password2) {
@@ -48,28 +48,12 @@ export default function Register() {
 
         }
 
-        try {
-          const res = await axios.post("http://localhost:9000/users/register", userData);
-          const feedback = await res.json();
-
-          if (feedback.errors) {
-            console.log(feedback)
-            console.log(feedback.errors);
-          }
-          if (feedback.user) {
-            window.location = "/exams"
-          }
-        }
-        catch (error) {
-          console.log(error);
-        }
-
-        // axios.post("http://localhost:9000/users/register", userData)
-        // .then(response => {
-        //   console.log(response.data)
-        //   // Handle response
-        //   window.location = "/exams"
-        // })
+        axios.post("https://coderyders.onrender.com/users/register", userData)
+        .then(response => {
+          console.log(response.data)
+          // Handle response
+          window.location = "/exams"
+        })
     }
     }
   return (

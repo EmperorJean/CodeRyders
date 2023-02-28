@@ -11,7 +11,10 @@ const {
 router.get('/', getExam)
 
 router.post('/add', addExam)
-router.route('/:id').delete(deleteExam).put(updateExam).get(getOneExam)
+router.post('/delete', deleteExam)
+router.post('/update', updateExam)
+router.route('/:id').put(updateExam).get(getOneExam)
+
 
 
 
