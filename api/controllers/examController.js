@@ -72,8 +72,6 @@ const updateExam = asyncHandler(async (req, res) => {
     throw new Error('Exam not found')
   }
 
-
-
   const updatedExam = await Exam.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   })
