@@ -5,16 +5,29 @@ import "../css/Patient.css";
 import {Link} from "react-router-dom";
 import "../css/ExamAdmin.css"
 import { Button } from 'react-bootstrap';
-
+import axios
+ from 'axios';
 const AdminDisplay = (props) => {
-    const handleClick = () => {
-        console.log("Test Click");
+    const handleClick = (e) => {
+        switch(e.target.id)
+        {
+            case 'remove':
+                axios.post("http://localhost:9000/exams/delete", {exam_id: props.patient._id})
+                 .then((response) => {
+                 window.location = "/admin"
+                 });
+          break;
+
+          case 'update':
+            window.location = `exams/${props.patient._id}/update`
+            break;
+        }
     };
     return (
         <>
         <tr>
             <td className = "examPageLink"><Link to ={`/patient/${props.patient.patientId}`}>{props.patient.patientId}</Link></td> 
-            <td className = "examPageLink"><Link to = {`/exam/${props.patient.examId}`}>{props.patient.examId}</Link></td>
+            <td className = "examPageLink"><Link to = {`/exams/${props.patient._id}`}>{props.patient.examId}</Link></td>
             <td><img src={props.patient.imageURL}/></td>
             <td>{props.patient.keyFindings}</td>
             <td>{props.patient.brixiaScores}</td>
@@ -23,8 +36,8 @@ const AdminDisplay = (props) => {
             <td>{props.patient.bmi}</td>
             <td>{props.patient.zipCode}</td>
             <td className="adminButtons">
-                <button className="editButton" onClick={handleClick}>Edit</button>
-                <button className="removeButton" onClick={handleClick}>Remove</button>
+                <button id="update" className="editButton" onClick={handleClick}>Update</button>
+                <button id="remove" className="removeButton" onClick={handleClick}>Remove</button>
             </td>
         </tr>
         </>
@@ -67,4 +80,5 @@ export const ExamAdmin = (props) => {
       </>
     )
 }
+
 export default ExamAdmin;
