@@ -1,8 +1,0 @@
-build:
-  # specify the Dockerfile path
-  dockerfile: Dockerfile
-web:
-  # specify the container image name and tag
-  image: coderyders:latest
-  # specify the custom docker run command
-  command: docker run -p 3000:3000 -p 9000:9000 coderyders
