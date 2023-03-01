@@ -13,7 +13,7 @@ COPY api ./api
 
 
 
-EXPOSE 3000:3000
-EXPOSE 9000:9000
+EXPOSE 3000
+EXPOSE 9000
 
 CMD ["sh", "-c", "cd client && npm start & cd api && npm start"]
