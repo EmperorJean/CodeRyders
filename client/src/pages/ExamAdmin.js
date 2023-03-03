@@ -5,8 +5,8 @@ import "../css/Patient.css";
 import {Link} from "react-router-dom";
 import "../css/ExamAdmin.css"
 import { Button } from 'react-bootstrap';
-import axios
- from 'axios';
+import axios from 'axios';
+import Footer from '../components/Footer'
 const AdminDisplay = (props) => {
     const handleClick = (e) => {
         switch(e.target.id)
@@ -56,8 +56,8 @@ export const ExamAdmin = (props) => {
         <>
         <h1>Admin</h1>
 
-        <div className='containerAdmin'>
-            <table>
+        <div className='container'>
+            <table className='container'> 
                 <thead>
                     <tr>
                         <th>Patient ID</th>
@@ -77,6 +77,7 @@ export const ExamAdmin = (props) => {
                 </tbody>
             </table>
         </div>
+        <Footer />
       </>
     )
 }

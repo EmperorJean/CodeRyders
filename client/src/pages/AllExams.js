@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect,  } from 'react';
 import "../css/Patient.css";
 import "../css/ExamPage.css"
+import Footer from '../components/Footer'
 
 
 function AllExams(){
@@ -35,10 +36,11 @@ function AllExams(){
     return(
 
         <>
-   <h1>Exams</h1>
+  
 
-<div className='containerAdmin '>
-    <table >
+<div className='container '>
+<h1>Exams</h1>
+    <table  className='container '>
         <thead>
             <tr>
                 <th >Patient ID</th>
@@ -74,9 +76,9 @@ function AllExams(){
       </table>
     
         </div>
-
+        <Footer />
         </>
-    
+   
     
     )
 }

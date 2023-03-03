@@ -3,6 +3,8 @@ import 'react-bootstrap'
 import "../css/CreateForm.css"
 import { useState, } from 'react';
 import axios from 'axios'
+import Footer from '../components/Footer'
+
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 function CreateForm(){
     const [form, setForm] = useState({
@@ -260,7 +262,10 @@ const handleRandom = (e) => {
             </div>
         </form>
     </div>
-</div>
+</div >
+
+<Footer />
+
 </>
     )
 }

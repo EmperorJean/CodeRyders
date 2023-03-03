@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import "../css/Exam.css"
 
+import Footer from '../components/Footer'
+
 
 
 export default function Register() {
@@ -126,7 +128,7 @@ export default function Register() {
 
             </div>
           </div>
-    
+          <Footer />
   </>
   )
 }
