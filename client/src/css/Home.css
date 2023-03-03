@@ -1,0 +1,55 @@
+img.image {
+    height: 100%;
+}
+.h1, h1 {
+    font-size: 7rem;
+    margin-top: 12rem;
+}
+p.lead{
+    margin: 3rem 5rem;
+    color: powderblue;
+}
+div.col-lg-6{
+    text-align: center;
+}
+p.login{
+    margin: 1.5rem;
+    color: powderblue;
+}
+footer.footer{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 7rem;
+    color: white;
+    margin-bottom: 4rem;
+}
+@media only screen and (max-width: 1349px) and (min-width: 768px){
+    .col-sm-8 {
+    width: 55%;
+}
+}
+
+@media (max-width: 768px){
+    /* .col-sm-8 {
+    width: 95%;
+} */
+.h1, h1 {
+    font-size: 7rem;
+    margin-top: -1rem;
+}
+footer.footer {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    color: white;
+    margin-top: 1.7rem;
+}
+img.image{
+    margin-top: 0rem;
+}
+
+p.lead{
+    margin: 2rem 4rem;
+   
+}
+} 
