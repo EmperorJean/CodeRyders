@@ -27,10 +27,10 @@ const PatientSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-    __v: {
-        type: Number,
-        required: true
-      },
+    // __v: {
+    //     type: Number,
+    //     required: true
+    //   },
     keyFindings: {
         type: String,
         required: true
