@@ -61,6 +61,16 @@ const createUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
+    const userExists = await User.findOne({ email })
+
+    if (userExists) {
+      // res.status(400)
+      // throw new Error('User already exists')
+      return res.status(200).json({
+        message: 'User exists.'
+      });
+    }
+
     const user = await User.create({ username, email, password });
     res.status(201).json({user: user._id});
   }
