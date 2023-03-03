@@ -8,6 +8,7 @@ import {
 } from 'mdb-react-ui-kit';
 import '../css/Login.css'
 import { Link, } from "react-router-dom";
+import Footer from '../components/Footer';
 
 
 export default function Login() {
@@ -44,6 +45,7 @@ export default function Login() {
 
     </MDBRow>
 
+    <Footer/>
   </MDBContainer>
     </>
   )
