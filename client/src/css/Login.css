@@ -1,0 +1,32 @@
+div.login-row {
+    text-align: center;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.register-row {
+    text-align: center;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1.login-title {
+    margin-bottom: 30px;
+    color: white;
+}
+
+label.form-label {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+label.register-label {
+    /* margin-top: 10px; */
+    margin-bottom: 20px;
+}
+
+p.login-p {
+    margin-top: 20px;
+}
