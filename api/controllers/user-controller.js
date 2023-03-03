@@ -31,10 +31,9 @@ const handleErrors = async (error, username) => {
 }
 
 const getUser = async (req, res) => {
-  return res.status(200).json({
-    success: true,
-    message: 'API is working.'
-  });
+  const user = await User.find({ user: req.params.id })
+    res.status(200).json(user)
+
 }
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -86,9 +85,25 @@ const logoutUser = asyncHandler(async (req, res) => {
   });
 });
 
+
+const deleteUser = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findByIdAndDelete(id);
+  if (!user) {
+    return res.status(400).json("User not found");
+  }
+  res.status(200).json("User deleted successfully");
+});
+
+const getMe = asyncHandler(async (req, res) => {
+  res.status(200).json(req.user)
+})
+
+
 module.exports = {
   getUser,
   loginUser,
   createUser,
   logoutUser,
+  deleteUser
 };
