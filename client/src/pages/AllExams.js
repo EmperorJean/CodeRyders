@@ -24,7 +24,6 @@ function AllExams(){
 
       axios.get(`http://localhost:9000/exams/`)
            .then((res) => {
-              console.log(res)
               setExam(res.data)
            })
            .catch((err) =>{

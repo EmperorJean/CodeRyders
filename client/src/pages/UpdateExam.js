@@ -20,11 +20,8 @@ function ExamSingle(){
     
 
     const fetchSingleExam = () => {
-
-      console.log({id})
       axios.get(`http://localhost:9000/exams/${id}`)
            .then((res) => {
-              console.log(res)
               setSingleExam(res.data)
            })
            .catch((err) =>{
@@ -36,7 +33,6 @@ function ExamSingle(){
         switch(e.target.id)
         {
             case 'update':
-                console.log(SingleExam)
                 axios.post("http://localhost:9000/exams/update", SingleExam)
                 .then((response) => {
                 window.location = "/admin"

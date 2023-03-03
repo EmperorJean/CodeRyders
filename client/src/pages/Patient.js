@@ -8,20 +8,13 @@ import Footer from '../components/Footer'
 // For a single patient
 export const Patient = (props) => {
 let {id} = useParams();
-console.log(id)
 const { response } = useApi({ path: `patient/${id}` });
 
-console.log(response)
   let messages = [];
   let patientId, numExams
 
   if (response) {
     messages = JSON.parse(response).message;
-    console.log(messages);
-
-    for (let i = 0; i < messages.length; i++) {
-      console.log(messages[i]);
-    }
     patientId = messages[0].patientId;
     
   }
@@ -61,7 +54,6 @@ export const Patients = (props) => {
           if(!ids.includes(messages[i].patientId))
             ids.push(messages[i].patientId)
         }
-      console.log(response);
       }
 
       return (

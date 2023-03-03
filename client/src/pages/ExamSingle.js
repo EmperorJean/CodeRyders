@@ -19,10 +19,8 @@ function ExamSingle(){
 
     const fetchSingleExam = () => {
 
-      console.log({id})
       axios.get(`/exams/${id}`)
            .then((res) => {
-              console.log(res)
               setSingleExam(res.data)
            })
            .catch((err) =>{

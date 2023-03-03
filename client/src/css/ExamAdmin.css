@@ -97,6 +97,27 @@
 #remove:hover{
     background-color: rgba(77, 4, 137, 0.1);
 }
+
+#createFormBtn
+{
+  display: block;
+  text-align: center;
+  width: 100%;
+
+}
+
+#createFormBtn a {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.507);
+  font-weight: bold;
+  padding: 1rem 10rem;
+  border-radius: 1rem;
+  transition: all ease-in-out .2s;
+}
+
+#createFormBtn a:hover{
+  color: gray;
+}
   /*
   background-color: #55608f;
   */

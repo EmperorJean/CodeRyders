@@ -33,9 +33,7 @@ export const Exams = (props) => {
   
     if (response) {
         messages = JSON.parse(response).message;
-        console.log("Test in If");
     }
-    console.log(messages.length);
     return(
         <>
         <div className="header">
