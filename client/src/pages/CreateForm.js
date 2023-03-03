@@ -42,18 +42,7 @@ function CreateForm(){
           [e.target.name]: value
         });
       };
-//       //autopopulate
-//       const handleClick = () =>{
-//         fetch('https://czi-covid-1-hjgxknco3a-uc.a.run.app/api/exams')
-//         .then(res => res.json())
-//         .then(data =>{
-//             console.log(data)
-    
-    
-          
-//         })  
-  
-// }
+
       
 const handleSubmit = (e) =>{
     e.preventDefault()
@@ -72,7 +61,7 @@ const handleSubmit = (e) =>{
         __v: 0
     }
 
-    axios.post("http://localhost:9000/exams/add", formData)
+    axios.post("/exams/add", formData)
     .then(response => {
       console.log(response)
       window.location = "/exams"

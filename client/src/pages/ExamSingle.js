@@ -20,7 +20,7 @@ function ExamSingle(){
     const fetchSingleExam = () => {
 
       console.log({id})
-      axios.get(`http://localhost:9000/exams/${id}`)
+      axios.get(`/exams/${id}`)
            .then((res) => {
               console.log(res)
               setSingleExam(res.data)

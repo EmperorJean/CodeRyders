@@ -50,7 +50,7 @@ export default function Register() {
 
         }
 
-        axios.post("https://coderyders.onrender.com/users/register", userData)
+        axios.post("https://medbay.onrender.com//users/register", userData)
         .then(response => {
           console.log(response.data)
           // Handle response
