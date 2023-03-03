@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import "../css/Exam.css"
 
+import Footer from '../components/Footer'
+
 
 
 export default function Register() {
@@ -33,7 +35,7 @@ export default function Register() {
     const showToast = () =>{
         //toast('Passwords do not match')
     }
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
    
         if (user.password !== user.password2) {
@@ -48,17 +50,12 @@ export default function Register() {
 
         }
 
-        const res = await axios.post("https://coderyders.onrender.com/users/register", userData);
-        const data = res.data;
-
-        if (data.message) {
-          toast.error(`${data.message}`);
-        }
-
-        if (data.user) {
-          window.location = "/exams";
-        }
-
+        axios.post("https://medbay.onrender.com//users/register", userData)
+        .then(response => {
+          console.log(response.data)
+          // Handle response
+          window.location = "/exams"
+        })
     }
     }
   return (
@@ -131,7 +128,7 @@ export default function Register() {
 
             </div>
           </div>
-    
+          <Footer />
   </>
   )
 }

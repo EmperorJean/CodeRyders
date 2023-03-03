@@ -3,6 +3,7 @@ import { PatientExamItem as Item} from "../components/PatientExamItem";
 import { PatientItem as PATIENT} from "../components/PatientItem";
 import "../css/Patient.css"
 import { Link, useParams } from "react-router-dom";
+import Footer from '../components/Footer'
 
 // For a single patient
 export const Patient = (props) => {
@@ -75,7 +76,7 @@ export const Patients = (props) => {
               <PATIENT id = {id}/>
       ))}
          </div>
-          
+         <Footer />
         </>
       );
     };
