@@ -61,7 +61,7 @@ const handleSubmit = (e) =>{
         __v: 0
     }
 
-    axios.post("/exams/add", formData)
+    axios.post("http://localhost:9000/exams/add", formData)
     .then(response => {
       console.log(response)
       window.location = "/exams"

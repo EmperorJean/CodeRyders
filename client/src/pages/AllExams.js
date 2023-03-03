@@ -22,7 +22,7 @@ function AllExams(){
   
 
 
-      axios.get(`exams/`)
+      axios.get(`http://localhost:9000/exams/`)
            .then((res) => {
               console.log(res)
               setExam(res.data)
