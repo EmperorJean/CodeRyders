@@ -35,7 +35,7 @@ export default function Register() {
     const showToast = () =>{
         //toast('Passwords do not match')
     }
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
    
         if (user.password !== user.password2) {
@@ -50,12 +50,16 @@ export default function Register() {
 
         }
 
-        axios.post("https://medbay.onrender.com//users/register", userData)
-        .then(response => {
-          console.log(response.data)
-          // Handle response
-          window.location = "/exams"
-        })
+        const res = await axios.post("http://localhost:9000/users/register", userData);
+        const data = res.data
+        if (data.message)
+        {
+          toast.error(`${data.message}`)
+        }
+        if (data.user)
+        {
+          window.location = "/exams";
+        }
     }
     }
   return (
