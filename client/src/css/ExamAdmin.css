@@ -98,25 +98,30 @@
     background-color: rgba(77, 4, 137, 0.1);
 }
 
-#createFormBtn
-{
-  display: block;
-  text-align: center;
+#createFormBtn {
   width: 100%;
-
+  display: flex;
+  justify-content: center;
 }
 
 #createFormBtn a {
+  display: inline-block;
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgba(0, 0, 0, 0.116);
   font-weight: bold;
-  padding: 1rem 10rem;
-  border-radius: 1rem;
   transition: all ease-in-out .2s;
+  padding: 5rem;
+  font-size: 15pt;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: -5rem;
+  height: 100%;
+  width: 100%;
 }
 
 #createFormBtn a:hover{
-  color: gray;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.281);
 }
   /*
   background-color: #55608f;
