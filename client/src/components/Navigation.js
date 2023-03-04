@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/Nav.css"
+import AuthContext from "../context/authContext";
 export const Nav = (props) => {
+
+  const loggedIn = useContext(AuthContext);
+  console.log(loggedIn);
 
   return (
     <nav>

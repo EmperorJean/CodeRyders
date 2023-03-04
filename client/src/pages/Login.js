@@ -34,16 +34,13 @@ export default function Register() {
     };
 
     
-    const res = await axios.post("http://localhost:9000/users/login", userData, {
-      withCredentials: true
-    });      
+    const res = await axios.post("http://localhost:9000/users/login", userData);      
     const data = res.data;
     if (data.message) {
       toast.error(`${data.message}`);
     }
     else {
-      console.log(data);
-      //window.location = "/exams";
+      window.location = "/exams";
     }
     
  
