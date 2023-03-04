@@ -41,6 +41,28 @@ export default function Register() {
         if (user.password !== user.password2) {
         toast.error('Passwords do not match')
         }
+        if (user.password.length < 8) {
+          toast.error('Passwords must be 8 character or longer')
+          } 
+          if (user.email) {
+            axios.get("http://localhost:9000/users")
+            .then(res => {
+              console.log(res.data)
+              // Handle response
+              res.data.forEach(e => {
+                         if (e.email === user.email) {
+                          toast.error('Email already exists');
+                         }
+                         if (e.username === user.username) {
+                          toast.error('Username already exists');
+                         }
+                         
+  
+                     });
+            })
+     
+    
+         }
         else{
         const userData = {
             username: user.username,
@@ -48,6 +70,12 @@ export default function Register() {
             password: user.password,
             password2: user.password2
 
+        }
+        if (!user.username){
+          toast.error('Please enter a valid Username')
+        }
+        if (!user.password){
+          toast.error('Please enter a Password')
         }
 
         const res = await axios.post("http://localhost:9000/users/register", userData);
@@ -60,6 +88,7 @@ export default function Register() {
         {
           window.location = "/exams";
         }
+       
     }
     }
   return (
