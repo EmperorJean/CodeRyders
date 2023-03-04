@@ -22,9 +22,6 @@ export default function Register() {
 
     // const [email, setEmail] = useState()
     // const [password, setPassword] = useState()
- 
-
-  
     const handleChange = (e) => {
         const value = e.target.value;
         setUser({
