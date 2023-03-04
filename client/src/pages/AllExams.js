@@ -38,6 +38,7 @@ function AllExams(){
   
 
 <div className='container '>
+  
 <h1>Exams</h1>
     <table  className='container '>
         <thead>
