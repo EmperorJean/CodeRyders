@@ -5,10 +5,23 @@ import "../css/Patient.css";
 import {Link} from "react-router-dom";
 import "../css/ExamAdmin.css"
 import { Button } from 'react-bootstrap';
-
+import axios
+ from 'axios';
 const AdminDisplay = (props) => {
-    const handleClick = () => {
-        console.log("Test Click");
+    const handleClick = (e) => {
+        switch(e.target.id)
+        {
+            case 'remove':
+                axios.post("http://localhost:9000/exams/delete", {exam_id: props.patient._id})
+                 .then((response) => {
+                 window.location = "/admin"
+                 });
+          break;
+
+          case 'update':
+            window.location = `exams/${props.patient._id}/update`
+            break;
+        }
     };
     return (
         <>
@@ -67,4 +80,5 @@ export const ExamAdmin = (props) => {
       </>
     )
 }
+
 export default ExamAdmin;

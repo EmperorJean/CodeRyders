@@ -48,7 +48,7 @@ export default function Register() {
 
         }
 
-        axios.post("http://localhost:9000/users/register", userData)
+        axios.post("https://coderyders.onrender.com/users/register", userData)
         .then(response => {
           console.log(response.data)
           // Handle response

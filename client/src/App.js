@@ -12,9 +12,9 @@ import ExamAdmin from './pages/ExamAdmin';
 import AllExams from './pages/AllExams'
 import Register from './pages/Register';
 import Login from './pages/Login';
-
+import UpdateExam from './pages/UpdateExam'
 // components
-import { Nav } from './components/Navigation';
+import  {Nav}  from './components/Navigation';
 //import { useApi } from './hooks/use-api';
 
 function App() {
@@ -34,6 +34,7 @@ function App() {
      <Route path="/exams/:id" element={<ExamSingle />} />
      <Route path="/patient/:id" element={<Patient />} />
      <Route path="/patient" element={<Patients />} />
+     <Route path="/exams/:id/update" element={<UpdateExam />} />
       
     </Routes>
     </>
