@@ -53,10 +53,11 @@ export const ExamAdmin = (props) => {
 
     return(
         <>
-        <h1>Admin</h1>
+        
         <div id="createFormBtn">
         <Link to = "/create">Create New Exam</Link></div>
         <div className='container'>
+        <h1>Admin</h1>
             <table className='container'> 
                 <thead>
                     <tr>

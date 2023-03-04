@@ -1,20 +1,9 @@
 import { Link, Navigate } from "react-router-dom";
 import "../css/Nav.css"
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+
 
 export const Nav = () => {
-  //let navigate = useNavigate();
 
-//   const logout = async() =>{
-
-//     await axios.get("http://localhost:9000/users",{withCredentials:true})
-//     .then(res => {
-//         console.log(res.data);
-//         navigate('/login');
-//         return;
-//     })
-// }
 
 const logout = () =>{
 

@@ -15,14 +15,14 @@ import Login from './pages/Login';
 import UpdateExam from './pages/UpdateExam'
 // components
 import  {Nav}  from './components/Navigation';
-import  {Nav2}  from './components/HomeNavbar';
+import  {Nav2}  from './components/Nav2';
 //import { useApi } from './hooks/use-api';
 
 function App() {
   const location = useLocation();
   
   //const { response } = useApi();
-  const excludeNavRoutes = ['/login', '/register'];
+  const excludeNavRoutes = ['/', '/login', '/register'];
   const shouldExcludeNav = excludeNavRoutes.includes(location.pathname);
 
 
