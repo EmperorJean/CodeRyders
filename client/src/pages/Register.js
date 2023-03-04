@@ -5,7 +5,7 @@ import { useState, } from 'react';
 import { Link, } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import "../css/Exam.css"
+import "../css/Login.css"
 
 import Footer from '../components/Footer'
 
@@ -64,63 +64,60 @@ export default function Register() {
     }
   return (
   <>
-
-          <div className="container" >
+        
+          <div className="container register-row" >
             <div className="card-body p-5">
-              <h2 className="text-uppercase text-center mb-5">Create an account</h2>
+              <h1 className="text-uppercase text-center mb-5 login-title">R E G I S T E R</h1>
 
               <form action='' id='login' method='POST' onSubmit={handleSubmit}>
 
                 <div className="form-outline mb-4">
+                <input 
+                type="text" 
+                name='username'
+                value={user.username}
+                onChange={handleChange}
+                id="form3Example1cg" className="form-control form-control-lg"  required/>
                 <label className="form-label" >Username</label>
-                  <input 
-                  type="text" 
-                  name='username'
-                  value={user.username}
-                  onChange={handleChange}
-                  id="form3Example1cg" className="form-control form-control-lg"  required/>
-                  <br />
                 </div>
 
                 <div className="form-outline mb-4">
+                <input 
+                type="email" 
+                name='email'
+                value={user.email}
+                onChange={handleChange}
+                id="form3Example3cg" className="form-control form-control-lg" required/>
                 <label className="form-label" >Your Email</label>
-                  <input 
-                  type="email" 
-                  name='email'
-                  value={user.email}
-                  onChange={handleChange}
-                  id="form3Example3cg" className="form-control form-control-lg" required/>
-                  <br />
                 </div>
 
                 <div className="form-outline mb-4">
+                <input 
+                type="password" 
+                name='password'
+                value={user.password}
+                onChange={handleChange}
+                className="form-control form-control-lg" required />
                 <label className="form-label" >Password</label>
-                  <input 
-                  type="password" 
-                  name='password'
-                  value={user.password}
-                  onChange={handleChange}
-                   className="form-control form-control-lg" required />
-                  <br />
+
                 </div>
 
                 <div className="form-outline mb-4">
+                <input 
+                type="password" 
+                name='password2'
+                value={user.password2}
+                onChange={handleChange}
+                id="form3Example4cg" className="form-control form-control-lg" required />
                 <label className="form-label" >Password</label>
-                  <input 
-                  type="password" 
-                  name='password2'
-                  value={user.password2}
-                  onChange={handleChange}
-                  id="form3Example4cg" className="form-control form-control-lg" required />
-                  <br />
                 </div>
 
         
-                <div >
+                <div>
                   <button type="submit"
                   value='login'
                   onClick={showToast}
-                    className="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                    className="btn btn-primary">Register</button>
                     <ToastContainer />
                 </div>
                 <br />
