@@ -47,7 +47,10 @@ export default function Register() {
 
         }
 
-        const res = await axios.post("http://localhost:9000/users/register", userData);
+        const res = await axios.post("http://localhost:9000/users/register", userData, {
+          withCredentials: true
+        });
+        
         const data = res.data
         if (data.message)
         {

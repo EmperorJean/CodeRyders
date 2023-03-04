@@ -4,7 +4,7 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
 // create json web token
-const maxAge = 60 * 60;
+const maxAge = 24 * 60 * 60;
 const createToken = (id) => {
   return jwt.sign({ id }, "[Code Ryders UserAuth Secret]", {
     expiresIn: maxAge,
@@ -14,19 +14,16 @@ const createToken = (id) => {
 // login user
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
 
   // Check for user email
   const user = await User.findOne({ email });
-  console.log(user);
   
   if (user) {
     const auth = await bcrypt.compare(password, user.password);
-    console.log(auth);
     if (auth) {
       const token = createToken(user._id);
-      res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-      res.status(200).json({ user: user._id });
+      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+      res.status(201).json({user: user._id});
     }
     else {
       res.status(200).json({ message: "incorrect password" });
@@ -52,8 +49,8 @@ const createUser = asyncHandler(async (req, res) => {
 
   const user = await User.create({ username, email, password });
   const token = createToken(user._id);
-  res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
-  res.status(201).json({ user: user._id });
+  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+  res.status(201).json({user: user._id});
 });
 
 const logoutUser = asyncHandler(async (req, res) => {

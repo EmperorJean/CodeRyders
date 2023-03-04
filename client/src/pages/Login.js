@@ -33,14 +33,20 @@ export default function Register() {
       password: user.password,
     };
 
-    const res = await axios.post("http://localhost:9000/users/login", userData);
+    
+    const res = await axios.post("http://localhost:9000/users/login", userData, {
+      withCredentials: true
+    });      
     const data = res.data;
     if (data.message) {
       toast.error(`${data.message}`);
     }
-    if (data.user) {
-      window.location = "/exams";
+    else {
+      console.log(data);
+      //window.location = "/exams";
     }
+    
+ 
   };
   return (
     <>
