@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect,  } from 'react';
 import "../css/PatientItem.css"
 import "../css/Exam.css"
+import Footer from '../components/Footer'
 
 
 function ExamSingle(){
@@ -94,7 +95,7 @@ function ExamSingle(){
 
        
 
-       
+    <Footer />
         </>
     
     

@@ -53,3 +53,11 @@ button{
     align-items: center;
 }
 
+div.row.create{
+  
+    margin: 0 auto;
+    text-align: center;
+}
+div.form-row{
+    margin: 2rem 7rem;
+}

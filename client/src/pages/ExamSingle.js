@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect,  } from 'react';
 import "../css/PatientItem.css"
 import "../css/Exam.css"
+import Footer from '../components/Footer'
 
 
 function ExamSingle(){
@@ -19,7 +20,7 @@ function ExamSingle(){
     const fetchSingleExam = () => {
 
       console.log({id})
-      axios.get(`http://localhost:9000/exams/${id}`)
+      axios.get(`/exams/${id}`)
            .then((res) => {
               console.log(res)
               setSingleExam(res.data)
@@ -70,7 +71,7 @@ function ExamSingle(){
     </div>
     </div>
 
-       
+    <Footer />
 
        
         </>

@@ -6,6 +6,9 @@
     transform: translate(-50%, -50%);
     
   }
+  table.container{
+    margin-top: 3rem;
+  }
   
   table {
     width: 1000px;

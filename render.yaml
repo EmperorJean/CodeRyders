@@ -1,4 +1,0 @@
-services:
-  - name: coderyders
-    buildCommand: docker build -t coderydersapp .
-    webCommand: docker run -p 3000:3000 -p 9000:9000 coderydersapp

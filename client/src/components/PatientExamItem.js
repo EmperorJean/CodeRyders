@@ -1,7 +1,10 @@
 import "../css/PatientItem.css"
+import Footer from '../components/Footer'
 
 export const PatientExamItem = (props) => {
   return (
+      <>
+     
     <div>
         <div id="item">
 
@@ -20,5 +23,7 @@ export const PatientExamItem = (props) => {
 
         </div>
     </div>
+    <Footer />
+    </>
   );
 };
