@@ -16,7 +16,6 @@ import UpdateExam from './pages/UpdateExam'
 // components
 import  {Nav}  from './components/Navigation';
 import  {Nav2}  from './components/Nav2';
-import AuthContext, { AuthContextProvider } from './context/authContext';
 //import { useApi } from './hooks/use-api';
 
 function App() {
@@ -27,7 +26,7 @@ function App() {
   const shouldExcludeNav = excludeNavRoutes.includes(location.pathname);
 
   return (
-    <AuthContextProvider>
+    <>
         {!shouldExcludeNav && <Nav />} 
         {shouldExcludeNav && <Nav2 />}
 
@@ -45,7 +44,7 @@ function App() {
      <Route path="/exams/:id/update" element={<UpdateExam />} />
       
     </Routes>
-    </AuthContextProvider>
+    </>
   );
 }
 

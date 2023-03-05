@@ -1,23 +1,28 @@
-import React, {createContext, useEffect, useState} from "react";
-import axios from "axios";
+import { createContext, useReducer} from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext()
 
-const AuthContextProvider = (props) => {
-    const [loggedIn, setLoggedIn] = useState(undefined);
-
-    const getLoggedIn = async () => {
-        const response = await axios.get("http://localhost:9000/users/require-auth");
-        setLoggedIn(response.data);
+export const authReducer = (state, action) => {
+    switch (action.type) {
+        case "LOGIN":
+            return {user: action.payload};
+        case "LOGOUT":
+            return {user: null}
+        default: 
+            return state
     }
-
-    useEffect(() => {
-        getLoggedIn();
-    }, [])
-    return <AuthContext.Provider value={{ loggedIn, getLoggedIn }}>
-        {props.children}
-    </AuthContext.Provider>
 }
 
-export default AuthContext;
-export {AuthContextProvider};
+export const AuthContextProvider = ({ children }) => {
+    const[state, dispatch] = useReducer(authReducer, {
+        user: null
+    })
+
+    console.log("AuthContext state", state);
+
+    return (
+        <AuthContext.Provider value={{...state, dispatch}}>
+            {children}
+        </AuthContext.Provider>
+    )
+}

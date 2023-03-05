@@ -17,13 +17,12 @@ const loginUser = asyncHandler(async (req, res) => {
 
   // Check for user email
   const user = await User.findOne({ email });
-  
+
   if (user) {
     const auth = await bcrypt.compare(password, user.password);
     if (auth) {
       const token = createToken(user._id);
-      res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-      res.status(201).json({user: user._id});
+      res.status(201).json({email, token});
     }
     else {
       res.status(200).json({ message: "incorrect password" });
@@ -43,14 +42,13 @@ const createUser = asyncHandler(async (req, res) => {
   const userExists = await User.findOne({ email });
   if (userExists) {
     return res.status(200).json({
-      message: "User exists.",
+      message: "An account is already registered with that email.",
     });
   }
 
   const user = await User.create({ username, email, password });
   const token = createToken(user._id);
-  res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-  res.status(201).json({user: user._id});
+  res.status(201).json({email, token});
 });
 
 const logoutUser = asyncHandler(async (req, res) => {

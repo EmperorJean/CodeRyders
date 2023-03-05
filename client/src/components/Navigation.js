@@ -1,11 +1,13 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../css/Nav.css"
-import AuthContext from "../context/authContext";
-export const Nav = (props) => {
+import { useLogout } from "../hooks/useLogout"
 
-  const loggedIn = useContext(AuthContext);
-  console.log(loggedIn);
+export const Nav = (props) => {
+  const { logout } = useLogout();
+
+  const handleCLick = () => {
+    logout();
+  }
 
   return (
     <nav>
@@ -14,8 +16,9 @@ export const Nav = (props) => {
             <li><Link to = "/patient">Patients</Link></li>
             <li><Link to = "/exams">Exams</Link></li>
             <li><Link to = "/admin">Admin</Link></li>
-            <li><Link to = "/logout">Logout</Link></li>
+            <li><button onClick = {handleCLick}>Log out</button></li>
         </ul>
+        
     </nav>
   );
 };

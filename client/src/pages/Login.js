@@ -1,19 +1,21 @@
 import React from "react";
 import "react-bootstrap";
-import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../css/Login.css";
+import { useLogin } from "../hooks/useLogin";
 
 import Footer from "../components/Footer";
 
-export default function Register() {
+export default function Login() {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+
+  const { login, error, isLoading } = useLogin();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -28,22 +30,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userData = {
-      email: user.email,
-      password: user.password,
-    };
-
-    
-    const res = await axios.post("http://localhost:9000/users/login", userData);      
-    const data = res.data;
-    if (data.message) {
-      toast.error(`${data.message}`);
-    }
-    else {
-      window.location = "/exams";
-    }
-    
- 
+    await login(user.email, user.password);
   };
   return (
     <>
@@ -85,17 +72,20 @@ export default function Register() {
                 value="login"
                 onClick={showToast}
                 className="btn btn-primary"
+                disabled={isLoading}
               >
-                Log In
+                Log in
               </button>
               <ToastContainer />
             </div>
+            {error && <div className="error">{error}</div>}
             <br />
-            <p className="login-p">
+
+            <p className="">
               Don't have an account?{" "}
-              <Link to="/login" className="display-5">
+              <Link to="/register" className="display-5">
                 {" "}
-                Register here{" "}
+                Sign up here{" "}
               </Link>
             </p>
           </form>
