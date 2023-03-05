@@ -22,7 +22,7 @@ const loginUser = asyncHandler(async (req, res) => {
     const auth = await bcrypt.compare(password, user.password);
     if (auth) {
       const token = createToken(user._id);
-      res.status(201).json({email, token});
+      res.status(201).json({email, token, username: user.username});
     }
     else {
       res.status(200).json({ message: "incorrect password" });
@@ -48,7 +48,7 @@ const createUser = asyncHandler(async (req, res) => {
 
   const user = await User.create({ username, email, password });
   const token = createToken(user._id);
-  res.status(201).json({email, token});
+  res.status(201).json({email, token, username});
 });
 
 const logoutUser = asyncHandler(async (req, res) => {

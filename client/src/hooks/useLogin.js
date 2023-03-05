@@ -15,6 +15,7 @@ export const useLogin = () => {
         
         const res = await axios.post("http://localhost:9000/users/login", userData);
         const data = res.data;
+        console.log(data);
 
         if (data.message) {
             setIsLoading(false);
