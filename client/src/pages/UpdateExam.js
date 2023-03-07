@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect,  } from 'react';
 import "../css/PatientItem.css"
 import "../css/Exam.css"
-
+import Footer from '../components/Footer'
+const  API_URL = "https://coderyders-api.onrender.com"
 
 function ExamSingle(){
     const [SingleExam, setSingleExam] = useState([])
@@ -19,11 +20,8 @@ function ExamSingle(){
     
 
     const fetchSingleExam = () => {
-
-      console.log({id})
-      axios.get(`http://localhost:9000/exams/${id}`)
+      axios.get(`${API_URL}/exams/${id}`)
            .then((res) => {
-              console.log(res)
               setSingleExam(res.data)
            })
            .catch((err) =>{
@@ -35,8 +33,7 @@ function ExamSingle(){
         switch(e.target.id)
         {
             case 'update':
-                console.log(SingleExam)
-                axios.post("http://localhost:9000/exams/update", SingleExam)
+                axios.post(`${API_URL}/exams/update`, SingleExam)
                 .then((response) => {
                 window.location = "/admin"
                 });
@@ -94,7 +91,7 @@ function ExamSingle(){
 
        
 
-       
+    <Footer />
         </>
     
     
