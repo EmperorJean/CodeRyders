@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const corsOptions ={
-  origin:'https://coderyders-api.onrender.com', 
+  origin:'https://coderyders.onrender.com/', 
   credentials:true,            //access-control-allow-credentials:true
   optionSuccessStatus:200
 }
