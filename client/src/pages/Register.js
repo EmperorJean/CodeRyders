@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "../css/Login.css"
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer'
-
+const  API_URL = "https://coderyders-api.onrender.com"
 
 
 export default function Register() {
@@ -52,7 +52,7 @@ export default function Register() {
         toast.error('Please enter a Password')
       }
 
-      const res = await axios.post("http://localhost:9000/users/register", userData);
+      const res = await axios.post(`${API_URL}/users/register`, userData);
       const data = res.data
       if (data.message)
       {
@@ -70,7 +70,7 @@ export default function Register() {
           toast.error('Passwords must be 8 character or longer')
           } 
            if (user.email) {
-          axios.get("http://localhost:9000/users")
+          axios.get(`${API_URL}/users`)
           .then(res => {
             console.log(res.data)
             // Handle response

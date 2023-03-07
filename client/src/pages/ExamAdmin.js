@@ -7,12 +7,13 @@ import "../css/ExamAdmin.css"
 import axios from 'axios';
 import Footer from '../components/Footer'
 import tableSort from '../components/SortedTable';
+const  API_URL = "https://coderyders-api.onrender.com"
 const AdminDisplay = (props) => {
     const handleClick = (e) => {
         switch(e.target.id)
         {
             case 'remove':
-                axios.post("http://localhost:9000/exams/delete", {exam_id: props.patient._id})
+                axios.post(`${API_URL}/exams/delete`, {exam_id: props.patient._id})
                  .then((response) => {
                  window.location = "/admin"
                  });

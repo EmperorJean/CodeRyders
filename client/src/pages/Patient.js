@@ -4,7 +4,7 @@ import { PatientItem as PATIENT} from "../components/PatientItem";
 import "../css/Patient.css"
 import { Link, useParams } from "react-router-dom";
 import Footer from '../components/Footer'
-
+const  API_URL = "https://coderyders-api.onrender.com"
 // For a single patient
 export const Patient = (props) => {
 let {id} = useParams();

@@ -13,7 +13,7 @@ import { useState, } from 'react';
 import 'react-bootstrap';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
-
+const  API_URL = "https://coderyders-api.onrender.com"
 export default function Login() {
   let navigate = useNavigate();
   const [user, setUser] = useState({
@@ -34,7 +34,7 @@ export default function Login() {
     e.preventDefault()
     try {
      const userData = await axios.post(
-       "http://localhost:9000/users/login",
+       `${API_URL}/users/login`,
        {
          ...user,
        },
