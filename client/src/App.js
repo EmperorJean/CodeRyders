@@ -20,20 +20,22 @@ import  {Nav2}  from './components/Nav2';
 
 function App() {
   const location = useLocation();
-
+  
   //const { response } = useApi();
-  const excludeNavRoutes = ['/login', '/register'];
+  const excludeNavRoutes = ['/', '/login', '/register'];
   const shouldExcludeNav = excludeNavRoutes.includes(location.pathname);
 
+
   return (
+  
     <>
         {!shouldExcludeNav && <Nav />} 
-        {shouldExcludeNav && <Nav2 />}
+        {shouldExcludeNav && <Nav2 />} 
 
      <Routes>
-     <Route path="/" element={<Home />} />
+     <Route path="/" element={<Home />   } />
      <Route path="/register" element={<Register  />} />
-     <Route path="/login" element={<Login />} />
+     <Route path="/login" element={<Login   />} />
      {/* <Route path="/exams" element={<Exams />} /> */}
      <Route path="/exams" element={<AllExams />} />
      <Route path="/admin" element={<ExamAdmin />} />

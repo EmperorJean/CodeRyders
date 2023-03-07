@@ -6,13 +6,14 @@ import { Link, } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import "../css/Login.css"
-
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer'
 
 
 
 export default function Register() {
 
+  let navigate = useNavigate();
     const [user, setUser] = useState({
         username: '',
         email: '',
@@ -37,30 +38,57 @@ export default function Register() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-   
+        const userData = {
+          username: user.username,
+          email: user.email,
+          password: user.password,
+          password2: user.password2
+
+      }
+      if (!user.username){
+        toast.error('Please enter a valid Username')
+      }
+      if (!user.password){
+        toast.error('Please enter a Password')
+      }
+
+      const res = await axios.post("http://localhost:9000/users/register", userData);
+      const data = res.data
+      if (data.message)
+      {
+        toast.error(`${data.message}`)
+      }
+      if (data.user)
+      {
+        navigate("/exams")
+      }
+      
         if (user.password !== user.password2) {
         toast.error('Passwords do not match')
         }
-        else{
-        const userData = {
-            username: user.username,
-            email: user.email,
-            password: user.password,
-            password2: user.password2
+        if (user.password.length < 8) {
+          toast.error('Passwords must be 8 character or longer')
+          } 
+           if (user.email) {
+          axios.get("http://localhost:9000/users")
+          .then(res => {
+            console.log(res.data)
+            // Handle response
+            res.data.forEach(e => {
+                       if (e.email === user.email) {
+                        toast.error('Email already exists');
+                       }
+                       if (e.username === user.username) {
+                        toast.error('Username already exists');
+                       }
+                       
 
-        }
-
-        const res = await axios.post("http://localhost:9000/users/register", userData);
-        const data = res.data
-        if (data.message)
-        {
-          toast.error(`${data.message}`)
-        }
-        if (data.user)
-        {
-          window.location = "/exams";
-        }
-    }
+                   });
+          })
+   
+  
+       }
+      
     }
   return (
   <>

@@ -16,6 +16,13 @@
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
   }
+
+  .headButton {
+    background-color: transparent;
+    border-color: transparent;
+    width: 15px;
+    position: left;
+  }
   
   th, td {
     padding: 15px;
@@ -25,6 +32,7 @@
   
   th{
     text-align: center;
+    vertical-align: middle;
   }
   
   tbody{
@@ -58,7 +66,6 @@
   td:hover{
     background-color: rgba(255,255,255,0.4);
   }
-  
 .header{
     margin-bottom: 30rem;
     margin: 3rem;
@@ -97,7 +104,6 @@
 #remove:hover{
     background-color: rgba(77, 4, 137, 0.1);
 }
-
 #createFormBtn {
   width: 100%;
   display: flex;
