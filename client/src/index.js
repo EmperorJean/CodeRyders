@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
-import {AuthContextProvider} from "./context/AuthContext";
+import {AuthContextProvider} from "./context/AuthContext.js";
 
 axios.defaults.withCredentials = true;
 
