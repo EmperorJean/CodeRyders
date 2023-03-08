@@ -11,6 +11,12 @@ const createToken = (id) => {
   });
 };
 
+const getUser = async (req, res) => {
+  const user = await User.find({ user: req.params.id })
+    res.status(200).json(user)
+
+}
+
 // login user
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;

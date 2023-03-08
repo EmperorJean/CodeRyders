@@ -9,14 +9,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import "../css/Login.css"
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer'
+import { useRegister } from "../hooks/useRegister";
 const  API_URL = "https://coderyders-api.onrender.com"
 
-import Footer from "../components/Footer";
-import { useRegister } from "../hooks/useRegister";
 
 export default function Register() {
 
-  let navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
     email: "",

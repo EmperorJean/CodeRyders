@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 import  axios  from "axios";
-
+const  API_URL = "https://coderyders-api.onrender.com"
 export const useRegister = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
@@ -13,7 +13,7 @@ export const useRegister = () => {
 
         const userData = {username, email, password}
         
-        const res = await axios.post("http://localhost:9000/users/register", userData);
+        const res = await axios.post(API_URL, userData);
         const data = res.data;
 
         if (data.message) {
