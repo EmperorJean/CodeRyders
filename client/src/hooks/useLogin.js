@@ -15,11 +15,11 @@ export const useLogin = () => {
         
         const res = await axios.post(API_URL, userData);
         const data = res.data;
-        console.log(data);
 
         if (data.message) {
             setIsLoading(false);
             setError(data.message);
+            console.log(data.message);
         }
 
         if (data.email) {
