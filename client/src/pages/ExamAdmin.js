@@ -82,7 +82,7 @@ export const ExamAdmin = (props) => {
                 setUp_Down({byExamId: !up_down.byExamId});
                 break;
             case "byBrixia":
-                setUp_Down({byBrixia: !up_down.byBrixiaId});
+                setUp_Down({byBrixia: !up_down.byBrixia});
                 break;
             case "byAge":
                 setUp_Down({byAge: !up_down.byAge});
