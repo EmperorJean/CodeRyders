@@ -1,17 +1,19 @@
-import React from 'react'
 import 'react-bootstrap'
+import {useState, useEffect} from 'react'
 import {useApi} from "../hooks/use-api";
 import "../css/Patient.css";
 import {Link} from "react-router-dom";
 import "../css/ExamAdmin.css"
 import axios from 'axios';
 import Footer from '../components/Footer'
+import tableSort from '../components/SortedTable';
+const  API_URL = "https://coderyders-api.onrender.com"
 const AdminDisplay = (props) => {
     const handleClick = (e) => {
         switch(e.target.id)
         {
             case 'remove':
-                axios.post("http://localhost:9000/exams/delete", {exam_id: props.patient._id})
+                axios.post(`${API_URL}/exams/delete`, {exam_id: props.patient._id})
                  .then((response) => {
                  window.location = "/admin"
                  });
@@ -22,6 +24,7 @@ const AdminDisplay = (props) => {
             break;
         }
     };
+    
     return (
         <>
         <tr>
@@ -46,11 +49,34 @@ const AdminDisplay = (props) => {
 export const ExamAdmin = (props) => {
     const { response } = useApi({path : `patient` });
     let messages = [];
-  
     if (response) {
         messages = JSON.parse(response).message;
-    }
-
+    };
+    const [list, setList] = useState(
+        [{
+            patientId: "",
+            _id: "",
+            imageURL: "",
+            keyFindings: "",
+            brixiaScores: "",
+            age: "",
+            sex: "",
+            bmi: "",
+            zipCode: "",
+        }]);
+    const handleSort = (props) => {
+        let sort = tableSort(props, list);
+        setList(sort);
+        console.log(list);
+        console.log(props);
+    };
+    useEffect(() => {
+        console.log(list.length);
+        if (list.length === 1 || list.length === 0) {
+            setList([...messages]);
+            console.log("test inside if");
+        }
+    }, [messages, list.length]);
     return(
         <>
         
@@ -59,22 +85,46 @@ export const ExamAdmin = (props) => {
         <div className='container'>
         <h1>Admin</h1>
             <table className='container'> 
-                <thead>
-                    <tr>
-                        <th>Patient ID</th>
-                        <th>Exam ID</th>
+                <thead className="tableHead">
+                    <tr id="headButt">
+                        <th>
+                            <button className ="headButton" onClick={() => {handleSort("byPatientId")}}>
+                                Patient ID
+                            </button>
+                        </th>
+                        <th>
+                            <button className="headButton" onClick={() => {handleSort("byExamId")}}>
+                                Exam ID
+                            </button>
+                        </th>
                         <th>Image</th>
                         <th>Key Findings</th>
-                        <th>Brixia Score</th>
-                        <th>Age</th>
+                        <th>
+                            <button className="headButton" onClick={() => {handleSort("byBrixia")}}>
+                                Brixia Scores
+                            </button>
+                        </th>
+                        <th>
+                            <button className="headButton" onClick={() => {handleSort("byAge")}}>
+                                Age
+                            </button>
+                        </th>
                         <th>Sex</th>
-                        <th>BMI</th>
-                        <th>Zip Code</th>
+                        <th>
+                            <button className="headButton" onClick={() => {handleSort("byBMI")}}>
+                                BMI
+                            </button>
+                        </th>
+                        <th>
+                            <button className="headButton" onClick={() => {handleSort("byZip")}}>
+                                Zip Code
+                            </button>
+                        </th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {messages.map((patient) => (<AdminDisplay patient={patient}/>))}
+                <tbody className="tableBody">
+                    {list.map((patient) => (<AdminDisplay patient={patient}/>))}
                 </tbody>
             </table>
         </div>

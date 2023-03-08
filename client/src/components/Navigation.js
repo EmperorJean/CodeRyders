@@ -1,4 +1,5 @@
 import { Link, Navigate } from "react-router-dom";
+
 import { useAuthContext } from "../hooks/useAuthContext";
 import "../css/Nav.css";
 import { useLogout } from "../hooks/useLogout";
@@ -13,7 +14,18 @@ export const Nav = () => {
     return <Navigate to="/"/>
   };
 
+
+
+export const Nav = () => {
+
+
+const logout = () =>{
+
+  localStorage.clear();
+  window.location = "/login"
+}
   return (
+    
     <nav>
       <ul>
         <li>

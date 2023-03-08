@@ -31,7 +31,7 @@ const loginUser = asyncHandler(async (req, res) => {
   else {
     res.status(200).json({ message: "incorrect email" });
   }
-});
+})
 
 // create new user, catch and handle any errors if they are present
 // return both user and any erroes as JSON doc
@@ -52,6 +52,7 @@ const createUser = asyncHandler(async (req, res) => {
 });
 
 const logoutUser = asyncHandler(async (req, res) => {
+
   return res.status(200).json({
     message: "You are Logged Out.",
   });
@@ -66,13 +67,16 @@ const deleteUser = asyncHandler(async (req, res) => {
   res.status(200).json("User deleted successfully");
 });
 
-const getMe = asyncHandler(async (req, res) => {
-  res.status(200).json(req.user);
-});
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: '30d',
+  })
+}
 
 module.exports = {
   loginUser,
   createUser,
   logoutUser,
   deleteUser,
+  getUser
 };

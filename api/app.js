@@ -18,7 +18,7 @@ const app = express();
 app.use(logger("dev"));
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://coderyders.onrender.com"],
     credentials: true,
   })
 );

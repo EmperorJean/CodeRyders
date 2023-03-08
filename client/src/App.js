@@ -23,20 +23,23 @@ import {useAuthContext} from "./hooks/useAuthContext"
 function App() {
   const location = useLocation();
   const { user } = useAuthContext()
-
   //const { response } = useApi();
-  const excludeNavRoutes = ['/login', '/register'];
+  const excludeNavRoutes = ['/', '/login', '/register'];
   const shouldExcludeNav = excludeNavRoutes.includes(location.pathname);
 
+
   return (
+  
     <>
         {!shouldExcludeNav && <Nav />} 
-        {shouldExcludeNav && <Nav2 />}
+        {shouldExcludeNav && <Nav2 />} 
 
      <Routes>
+
      <Route path="/" element={<Home />} />
      <Route path="/register" element={!user ? <Register  />: <Navigate to="/exams"/>} />
      <Route path="/login" element={!user ? <Login />: <Navigate to="/exams"/>} />
+
      {/* <Route path="/exams" element={<Exams />} /> */}
      <Route path="/exams" element={user ? <AllExams />: <Navigate to="/login"/>} />
      <Route path="/admin" element={user ? <ExamAdmin />: <Navigate to="/login"/>} />

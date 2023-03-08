@@ -1,15 +1,22 @@
-import React from "react";
-import "react-bootstrap";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "../css/Login.css";
+
+import React from 'react'
+import 'react-bootstrap';
+import axios from 'axios'
+import { useState, } from 'react';
+import { Link, } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import "../css/Login.css"
+import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer'
+const  API_URL = "https://coderyders-api.onrender.com"
 
 import Footer from "../components/Footer";
 import { useRegister } from "../hooks/useRegister";
 
 export default function Register() {
+
+  let navigate = useNavigate();
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -36,9 +43,23 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (user.password !== user.password2) {
+  const userData = {
+          username: user.username,
+          email: user.email,
+          password: user.password,
+          password2: user.password2
+
+      }
+      
+      if (!user.username){
+        toast.error('Please enter a valid Username')
+      }
+      if (!user.password){
+        toast.error('Please enter a Password')
+      }
+     if (user.password !== user.password2) {
       toast.error("Passwords do not match");
-    }
+      }
     else {
     await register(user.username, user.email, user.password);
     }
