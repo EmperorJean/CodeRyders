@@ -1,5 +1,5 @@
 import 'react-bootstrap'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import {useApi} from "../hooks/use-api";
 import "../css/Patient.css";
 import {Link} from "react-router-dom";
@@ -29,7 +29,7 @@ const AdminDisplay = (props) => {
         <tr>
             <td className = "examPageLink"><Link to ={`/patient/${props.patient.patientId}`}>{props.patient.patientId}</Link></td> 
             <td className = "examPageLink"><Link to = {`/exams/${props.patient._id}`}>{props.patient.examId}</Link></td>
-            <td><img src={props.patient.imageURL}/></td>
+            <td><img src={props.patient.imageURL} alt=""/></td>
             <td>{props.patient.keyFindings}</td>
             <td>{props.patient.brixiaScores}</td>
             <td>{props.patient.age}</td>
@@ -51,31 +51,55 @@ export const ExamAdmin = (props) => {
     if (response) {
         messages = JSON.parse(response).message;
     };
-    const [list, setList] = useState(
-        [{
-            patientId: "",
-            _id: "",
-            imageURL: "",
-            keyFindings: "",
-            brixiaScores: "",
-            age: "",
-            sex: "",
-            bmi: "",
-            zipCode: "",
-        }]);
+    const [up_down, setUp_Down] = useState({
+        byPatientId: false, 
+        byExamId: false, 
+        byBrixia: false, 
+        byAge: false, 
+        byBMI: false, 
+        byZip: false});
+    const [list, setList] = useState([[{
+        patientId: "",
+        _id: "",
+        imageURL: "",
+        keyFindings: "",
+        brixiaScores: "",
+        age: "",
+        sex: "",
+        bmi: "",
+        zipCode: "",
+    }]]);
+    
     const handleSort = (props) => {
-        let sort = tableSort(props, list);
+        let sort = tableSort(props, messages, up_down);
         setList(sort);
-        console.log(list);
-        console.log(props);
-    };
-    useEffect(() => {
-        console.log(list.length);
-        if (list.length === 1 || list.length === 0) {
-            setList([...messages]);
-            console.log("test inside if");
+        switch(props) {
+            case "byPatientId":
+                setUp_Down({byPatientId: !up_down.byPatientId});
+                break;
+            case "byExamId":
+                setUp_Down({byExamId: !up_down.byExamId});
+                break;
+            case "byBrixia":
+                setUp_Down({byBrixia: !up_down.byBrixiaId});
+                break;
+            case "byAge":
+                setUp_Down({byAge: !up_down.byAge});
+                break;
+            case "byBMI":
+                setUp_Down({byBMI: !up_down.byBMI});
+                break;
+            case "byZip":
+                setUp_Down({byZip: !up_down.byZip});
+                break;
+           default:
+            return; 
         }
-    }, [messages, list.length]);
+        console.log("After sort");
+        console.log(up_down);
+    };
+    let display = [];
+    display = (list.length < 2) ? [...messages] : [...list];
     return(
         <>
         
@@ -88,7 +112,7 @@ export const ExamAdmin = (props) => {
                     <tr id="headButt">
                         <th>
                             <button className ="headButton" onClick={() => {handleSort("byPatientId")}}>
-                                Patient ID
+                            Patient ID
                             </button>
                         </th>
                         <th>
@@ -123,7 +147,7 @@ export const ExamAdmin = (props) => {
                     </tr>
                 </thead>
                 <tbody className="tableBody">
-                    {list.map((patient) => (<AdminDisplay patient={patient}/>))}
+                    {display.map((patient) => (<AdminDisplay key={patient.patientId} patient={patient}/>))}
                 </tbody>
             </table>
         </div>
