@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import "../css/Nav.css";
 import { useLogout } from "../hooks/useLogout";
+
 
 export const Nav = () => {
   const { logout } = useLogout();
@@ -9,6 +10,7 @@ export const Nav = () => {
 
   const handleCLick = () => {
     logout();
+    return <Navigate to="/"/>
   };
 
   return (
