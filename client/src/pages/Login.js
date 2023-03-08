@@ -1,105 +1,98 @@
-import React from 'react'
-import 'react-bootstrap';
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBInput
-} from 'mdb-react-ui-kit';
-import '../css/Login.css'
-import { Link, } from "react-router-dom";
-import Footer from '../components/Footer';
-import { useState, } from 'react';
-import 'react-bootstrap';
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
-const  API_URL = "https://coderyders-api.onrender.com"
+import React from "react";
+import "react-bootstrap";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../css/Login.css";
+import { useLogin } from "../hooks/useLogin";
+
+import Footer from "../components/Footer";
+
 export default function Login() {
-  let navigate = useNavigate();
   const [user, setUser] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
+  });
 
-})
-
+  const { login, error, isLoading } = useLogin();
 
   const handleChange = (e) => {
     const value = e.target.value;
-        setUser({
-          ...user,
-          [e.target.name]: value
-        });
-  }
-  const handleSubmit = async (e) =>{
-    e.preventDefault()
-    try {
-     const userData = await axios.post(
-       `${API_URL}/users/login`,
-       {
-         ...user,
-       },
-       { withCredentials: true }
-     );
-    if (!userData){
-      throw new Error()
-    }
-    localStorage.setItem('token', userData.data.token);
     setUser({
-      name: `${userData.data.firstname} ${userData.data.lastname}`,
-      role: userData.data.role,
-      username: userData.data.username,
+      ...user,
+      [e.target.name]: value,
     });
-      navigate("/exams")
-   } catch (ex) {
-     console.log(ex);
-   }
+  };
+  const showToast = () => {
+    //toast('Passwords do not match')
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-
-  }
+    await login(user.email, user.password);
+  };
   return (
     <>
-  <form  onSubmit={handleSubmit}> 
-    <MDBContainer className="my-5 gradient-form">
+      <div className="container register-row">
+        <div className="card-body p-5">
+          <h1 className="text-uppercase text-center mb-5 login-title">
+            L O G I N
+          </h1>
 
-    <MDBRow className="login-row">
+          <form action="" id="login" method="POST" onSubmit={handleSubmit}>
+            <div className="form-outline mb-4">
+              <input
+                type="email"
+                name="email"
+                value={user.email}
+                onChange={handleChange}
+                id="form3Example3cg"
+                className="form-control form-control-lg"
+                required
+              />
+              <label className="form-label">Your Email</label>
+            </div>
 
-      <MDBCol col='6' className="mb-5">
-        <div className="d-flex flex-column ms-1">
+            <div className="form-outline mb-4">
+              <input
+                type="password"
+                name="password"
+                value={user.password}
+                onChange={handleChange}
+                className="form-control form-control-lg"
+                required
+              />
+              <label className="form-label">Password</label>
+            </div>
 
-          <h1 className="login-title">L O G I N</h1>
+            <div>
+              <button
+                type="submit"
+                value="login"
+                onClick={showToast}
+                className="btn btn-primary"
+                disabled={isLoading}
+              >
+                Log in
+              </button>
+              <ToastContainer />
+            </div>
+            {error && <div className="error">{error}</div>}
+            <br />
 
-
-          <MDBInput wrapperClass='mb-4' label='Email address' id='form1' 
-          type='email'
-          name='email'
-          value={user.email}
-          onChange={handleChange}/>
-          <MDBInput wrapperClass='mb-4' label='Password' id='form2' 
-          type='password'
-          name='password'
-          value={user.password}
-          onChange={handleChange}/>
-
-
-          <div className="text-center pt-1 mb-5 pb-1">
-            <button className="mb-4 w-100 btn btn-primary" type='submit' >Sign in</button>
-            <a className="mb-4 w-100" href="#!">Forgot password?</a>
-          </div>
-
-          <div className="d-flex flex-row align-items-center justify-content-center pb-4 mb-4">
-            <p className="login-p">Don't have an account?   <Link to='/register' className='display-5'> Register here </Link></p>
-
-          </div>
-
+            <p className="">
+              Don't have an account?{" "}
+              <Link to="/register" className="display-5">
+                {" "}
+                Sign up here{" "}
+              </Link>
+            </p>
+          </form>
         </div>
+      </div>
+      <Footer />
 
-      </MDBCol>
-
-    </MDBRow>
-
-    <Footer/>
-  </MDBContainer>
-  </form>
     </>
-  )
+  );
 }
