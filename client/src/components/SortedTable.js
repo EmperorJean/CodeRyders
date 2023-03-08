@@ -3,7 +3,7 @@ import "../css/ExamPage.css"
 import 'react-bootstrap';
 
 
-function mergeHigher(lower, upper, delim, up_down) {
+function mergeHigher(lower, upper, delim) {
     let sort = [];
     let i = 0;
     let j = 0;
