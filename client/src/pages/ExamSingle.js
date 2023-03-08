@@ -7,7 +7,7 @@ import { useState, useEffect,  } from 'react';
 import "../css/PatientItem.css"
 import "../css/Exam.css"
 import Footer from '../components/Footer'
-
+const  API_URL = "https://coderyders-api.onrender.com"
 
 function ExamSingle(){
     const [SingleExam, setSingleExam] = useState([])
@@ -19,7 +19,7 @@ function ExamSingle(){
 
     const fetchSingleExam = () => {
 
-      axios.get(`http://localhost:9000/exams/${id}`)
+      axios.get(`${API_URL}/exams/${id}`)
            .then((res) => {
               setSingleExam(res.data)
            })

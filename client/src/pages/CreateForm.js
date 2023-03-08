@@ -4,7 +4,7 @@ import "../css/CreateForm.css"
 import { useState, } from 'react';
 import axios from 'axios'
 import Footer from '../components/Footer'
-
+const  API_URL = "https://coderyders-api.onrender.com"
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 function CreateForm(){
     const [form, setForm] = useState({
@@ -61,7 +61,7 @@ const handleSubmit = (e) =>{
         __v: 0
     }
 
-    axios.post("http://localhost:9000/exams/add", formData)
+    axios.post(`${API_URL}/exams/add`, formData)
     .then(response => {
       window.location = "/exams"
       
