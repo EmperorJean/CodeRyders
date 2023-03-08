@@ -84,5 +84,5 @@ module.exports = {
   createUser,
   logoutUser,
   deleteUser,
-  getUser
+  getUser,
 };

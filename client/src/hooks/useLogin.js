@@ -13,7 +13,7 @@ export const useLogin = () => {
 
         const userData = {email, password}
         
-        const res = await axios.post(API_URL, userData);
+        const res = await axios.post(`${API_URL}/users/login`, userData);
         const data = res.data;
 
         if (data.message) {
