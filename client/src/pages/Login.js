@@ -2,7 +2,7 @@ import React from "react";
 import "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../css/Login.css";
 import { useLogin } from "../hooks/useLogin";
@@ -25,7 +25,7 @@ export default function Login() {
     });
   };
   const showToast = () => {
-    //toast('Passwords do not match')
+    toast('Authenticating...')
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -76,6 +76,7 @@ export default function Login() {
               >
                 Log in
               </button>
+              
               <ToastContainer />
             </div>
             {error && <div className="error">{error}</div>}
@@ -91,8 +92,9 @@ export default function Login() {
           </form>
         </div>
       </div>
-      <Footer />
 
+      <Footer />
     </>
+    
   );
 }

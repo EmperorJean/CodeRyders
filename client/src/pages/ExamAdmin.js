@@ -2,26 +2,38 @@ import 'react-bootstrap'
 import {useState} from 'react'
 import {useApi} from "../hooks/use-api";
 import "../css/Patient.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "../css/ExamAdmin.css"
 import axios from 'axios';
 import Footer from '../components/Footer'
 import tableSort from '../components/SortedTable';
+
+
 const  API_URL = "https://coderyders-api.onrender.com"
 const AdminDisplay = (props) => {
+    
+let navigate = useNavigate(); 
+
+const routeChange = (path) =>{ 
+  navigate(path);
+}
+
+
+
     const handleClick = (e) => {
         switch(e.target.id)
         {
             case 'remove':
                 axios.post(`${API_URL}/exams/delete`, {exam_id: props.patient._id})
                  .then((response) => {
-                 window.location = "/admin"
+                routeChange("/admin")
                  });
           break;
 
           case 'update':
-            window.location = `exams/${props.patient._id}/update`
+           routeChange(`/exams/${props.patient._id}/update`)
             break;
+            default: console.error("Something went wrong with the update and remove buttons")
         }
     };
     

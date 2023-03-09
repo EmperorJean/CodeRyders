@@ -19,7 +19,6 @@ export const useLogin = () => {
         if (data.message) {
             setIsLoading(false);
             setError(data.message);
-            console.log(data.message);
         }
 
         if (data.email) {
