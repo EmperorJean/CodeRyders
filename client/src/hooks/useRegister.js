@@ -13,7 +13,7 @@ export const useRegister = () => {
 
         const userData = {username, email, password}
         
-        const res = await axios.post(API_URL, userData);
+        const res = await axios.post(`${API_URL}/users/register`, userData);
         const data = res.data;
 
         if (data.message) {
