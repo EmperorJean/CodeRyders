@@ -25,7 +25,7 @@ export default function Login() {
     });
   };
   const showToast = () => {
-    toast('Authenticating...')
+    //toast('Authenticating...')
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
