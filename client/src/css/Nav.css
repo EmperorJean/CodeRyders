@@ -1,10 +1,10 @@
-ul a {
+nav > ul >  a {
     text-decoration: none;
     color: white;
     font-size: 12pt;
 }
 
-ul {
+nav > ul {
     
     display: flex;
     flex-direction: row;
@@ -14,7 +14,7 @@ ul {
     align-items: center;
 }
 
-ul li {
+nav > ul > li {
     list-style-type: none;
 }
 
@@ -34,4 +34,77 @@ ul li {
     margin: 0;
     width: 55px;
     height: 50px;
+}
+
+#username-box {
+    color: white;
+    font-weight: bold;
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+    min-width: 150px;
+
+}
+
+#username{
+    margin-right: 0.5rem;
+}
+
+#a {
+    font-size: 20pt;
+}
+
+.dropDown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 100%;
+    min-width: 100px;
+}
+.dropDown div {
+    width: 100%;
+    padding: 1rem;
+    opacity: 1;
+}
+
+.dropDown.active {
+    opacity: 1;
+    background-color: #999999;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+}
+.dropDown.inactive {
+    opacity: 0;
+}
+
+.dropDownItem {
+    list-style-type: none;
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.dropDownItem #icon {
+    margin-right: 1rem;
+}
+
+#ico {
+    font-size: 20pt;
+}
+
+.hol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #99999931;
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.hol.active{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }

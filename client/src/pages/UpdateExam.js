@@ -7,9 +7,18 @@ import { useState, useEffect,  } from 'react';
 import "../css/PatientItem.css"
 import "../css/Exam.css"
 import Footer from '../components/Footer'
+import { useNavigate } from "react-router-dom";
 const  API_URL = "https://coderyders-api.onrender.com"
 
+
 function ExamSingle(){
+
+  let navigate = useNavigate(); 
+
+const routeChange = (path) =>{ 
+  navigate(path);
+}
+
     const [SingleExam, setSingleExam] = useState([])
     let { id } = useParams();
     
@@ -35,12 +44,12 @@ function ExamSingle(){
             case 'update':
                 axios.post(`${API_URL}/exams/update`, SingleExam)
                 .then((response) => {
-                window.location = "/admin"
+                  routeChange('/admin')
                 });
 
                 break;
             case 'cancel':
-                window.location = "/exams"
+                routeChange('/admin')
                 break;
         }
       }

@@ -31,11 +31,11 @@ const loginUser = asyncHandler(async (req, res) => {
       res.status(201).json({email, token, username: user.username});
     }
     else {
-      res.status(200).json({ message: "incorrect password" });
+      res.status(200).json({ message: "Incorrect password" });
     }
   } 
   else {
-    res.status(200).json({ message: "incorrect email" });
+    res.status(200).json({ message: "Incorrect email" });
   }
 })
 
