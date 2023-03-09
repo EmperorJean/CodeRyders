@@ -35,3 +35,18 @@ ul li {
     width: 55px;
     height: 50px;
 }
+
+#username-box {
+    color: white;
+    background-color: black;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#username{
+    margin-right: 1rem;
+}

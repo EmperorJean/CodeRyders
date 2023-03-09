@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../hooks/useAuthContext";
 import "../css/Nav.css";
 import { useLogout } from "../hooks/useLogout";
-
+import {FaUserCircle} from "react-icons/fa"
 export const Nav = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
@@ -30,8 +30,13 @@ export const Nav = () => {
         </li>
         {user && (
           <li>
-            <span>{user.username}</span>
+           
+      
             <button onClick={handleCLick}>Log out</button>
+            <span id = "username-box">
+              <span id = "username">{user.username} </span>
+             <FaUserCircle/>
+              </span>
           </li>
         )}
       </ul>
