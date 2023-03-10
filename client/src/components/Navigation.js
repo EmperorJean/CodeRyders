@@ -81,7 +81,7 @@ const DropDownItem = (props) => {
 }
 const DropDownItem2 = (props) => {
   return (
-      <li className="dropDownItem" onClick={props.click}>
+      <li className="dropDownItem2" onClick={props.click}>
           {props.icon}
           <span>{props.label}</span>
       </li>
