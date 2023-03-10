@@ -1,6 +1,10 @@
 img.image {
     height: 100%;
 }
+
+img.image:hover {
+    opacity: 1;
+}
 .h1, h1 {
     font-size: 7rem;
     margin-top: 12rem;

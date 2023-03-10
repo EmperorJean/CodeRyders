@@ -103,7 +103,7 @@ const handleRandom = (e) => {
     return(
 <>
 <div className=" create">
-    <div className=" ">
+    <div className="innerCreate">
         <br /><br />
         <h3>Create Exam</h3><br />
         <form action='' id='dataForm' onSubmit={handleSubmit} >
