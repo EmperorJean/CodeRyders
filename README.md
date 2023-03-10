@@ -8,7 +8,7 @@ A Full-stack web application for doctors to keep track of patient records
 
 ## How its Done:
 
-**Tech Used:**  JavaScript, React, CSS, Bootsrap, Node.js, JWT, MongoDB
+**Tech Used:**  JavaScript, React, CSS, Bootstrap, Node.js, JWT, MongoDB
 
 ## Optimizations
 

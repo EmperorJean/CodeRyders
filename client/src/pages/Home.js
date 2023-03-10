@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, } from "react-router-dom";
 import 'react-bootstrap'
 import "../css/Home.css"
-
+import Footer from "../components/Footer.js"
 
 
 
@@ -33,9 +33,8 @@ function Home(){
     </div>
 
   </div>
-<footer className="footer">
-<p>&copy;2023 CodeRyders | All Rights Reserved</p>
-</footer>
+
+<Footer/>
  
 
         </>
