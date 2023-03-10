@@ -63,7 +63,6 @@ nav > ul > li {
 }
 .dropDown div {
     width: 100%;
-    padding: 1rem;
     opacity: 1;
 }
 
@@ -78,15 +77,14 @@ nav > ul > li {
     opacity: 0;
 }
 
-.dropDownItem {
+.dropDownItem, .dropDownItem2{
     list-style-type: none;
     width: 100%;
-    margin: 1rem 0;
     display: flex;
     align-items: center;
 }
 
-.dropDownItem #icon {
+.dropDownItem #icon, .dropDownItem2 #icon {
     margin-right: 1rem;
 }
 
@@ -107,4 +105,18 @@ nav > ul > li {
 .hol.active{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+.dropDownItem, .dropDownItem2 {
+    padding: 0.5rem 1rem ;
+}
+
+.dropDownItem:hover {
+    background-color: rgb(139, 139, 139);
+}
+
+.dropDownItem2:hover {
+    background-color: rgb(139, 139, 139);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
