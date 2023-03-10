@@ -1,4 +1,17 @@
-# Hack.Diversity Tech Dive Template
+# MedBay
+A Full-stack web application for doctors to keep track of patient records
+
+![image](https://res.cloudinary.com/amunoali/image/upload/v1678418596/ezgif.com-optimize_io9ulx.gif)
+
+
+**Link to project:**  https://coderyders.onrender.com/ <br>
+
+## How its Done:
+
+**Tech Used:**  JavaScript, React, CSS, Bootsrap, Node.js, JWT, MongoDB
+
+## Optimizations
+
 
 ## Getting Started
 
@@ -25,14 +38,8 @@ cd api/
 npm i
 npm start
 ```
-Commit by: Joash
-
-Commit by: Luis
-
-Commit by: Parsua
-
-Commit by: Jean
-
-Commit by: Muno
-
 You should then be able to visit `localhost:9000` in your browser and see the server running.
+
+**Group project By:**
+Joash, Luis, Parsua, Jean and Muno
+
