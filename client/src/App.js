@@ -7,7 +7,6 @@ import CreateForm from './pages/CreateForm';
 import { Patient, Patients } from './pages/Patient';
 import Home from './pages/Home';
 import ExamSingle  from './pages/ExamSingle';
-// import Exams from './pages/Exams';
 import ExamAdmin from './pages/ExamAdmin';
 import AllExams from './pages/AllExams'
 import Register from './pages/Register';
@@ -16,7 +15,6 @@ import UpdateExam from './pages/UpdateExam'
 // components
 import  {Nav}  from './components/Navigation';
 import  {Nav2}  from './components/Nav2';
-//import { useApi } from './hooks/use-api';
 import {useAuthContext} from "./hooks/useAuthContext"
 
 

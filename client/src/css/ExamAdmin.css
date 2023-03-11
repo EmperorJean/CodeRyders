@@ -132,3 +132,13 @@
   /*
   background-color: #55608f;
   */
+  #headButt th {
+    margin: 1rem;
+  }
+
+  #headButt th button{
+    margin: 0;
+    padding: 1rem;
+    width: fit-content;
+    text-align: left;
+  }
