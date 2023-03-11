@@ -41,5 +41,5 @@ npm start
 You should then be able to visit `localhost:9000` in your browser and see the server running.
 
 **Group project By:**
-Joash, Luis, Parsua, Jean and Muno
+Michael, Joash, Luis, Parsua, Jean and Muno
 
