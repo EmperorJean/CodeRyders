@@ -23,7 +23,7 @@ p.login{
 footer.footer{
     text-align: center;
     font-size: 2rem;
-    margin-top: 7rem;
+    margin-top: 47rem;
     color: white;
     margin-bottom: 4rem;
 }
@@ -31,6 +31,7 @@ footer.footer{
     .col-sm-8 {
     width: 55%;
 }
+
 }
 
 @media (max-width: 768px){
