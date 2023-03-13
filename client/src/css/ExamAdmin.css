@@ -84,16 +84,21 @@
   /* Temporary CSS for buttons */
   .editButton {
     display: inline-block;
-    color:rgb(0, 221, 221);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
+    color:rgb(120, 152, 255);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-style: none;
+    padding: 1rem .5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
   }
 
   .removeButton {
     display: inline-block;
-    color: rgb(173, 0, 0);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 127, 110);
+    border-radius: 1rem;
+    background-color: #4f23963a;
+    padding: 1rem .5rem;
+    border-style: none;
   }
 
 
@@ -101,8 +106,8 @@
     background-color: rgba(77, 4, 137, 0.1);
 }
 
-#remove:hover{
-    background-color: rgba(77, 4, 137, 0.1);
+.removeButton:hover{
+    background-color: rgba(19, 1, 34, 0.349);
 }
 #createFormBtn {
   width: 100%;
@@ -132,3 +137,13 @@
   /*
   background-color: #55608f;
   */
+  #headButt th {
+    margin: 1rem;
+  }
+
+  #headButt th button{
+    margin: 0;
+    padding: 1rem;
+    width: fit-content;
+    text-align: left;
+  }

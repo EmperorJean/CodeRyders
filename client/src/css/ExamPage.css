@@ -72,6 +72,23 @@
     background-color: blue;
 
   }
+
+  #headButt th {
+    margin: 1rem;
+  }
+
+  #headButt th button{
+    margin: 0;
+    padding: 1rem;
+    width: fit-content;
+    text-align: left;
+  }
+  .headButton {
+    background-color: transparent;
+    border-color: transparent;
+    width: 15px;
+    position: left;
+  }
   /*
   background-color: #55608f;
   */
