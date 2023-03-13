@@ -33,6 +33,8 @@ const { response } = useApi({ path: `patient/${id}` });
       {messages.map((patient) => (
               <Item image = {patient.imageURL}  desc = {patient.keyFindings} version = {patient.__v} brixia = {patient.brixiaScores} exam = {patient.examId}/>
       ))}
+      
+    <Footer />
     </div>
     </>
   );

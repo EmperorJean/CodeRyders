@@ -23,7 +23,7 @@ export const PatientExamItem = (props) => {
 
         </div>
     </div>
-    <Footer />
     </>
+    
   );
 };

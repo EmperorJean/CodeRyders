@@ -9,13 +9,14 @@
     border-radius: 1rem;
     color: white;
     max-width: 1280px;
+    align-items: center;
 }
 
 #itemLeft img {
     width: 200px;
     height: 200px;
-    
 border-radius: 1rem;
+display: block;
 }
 #itemRight {
 position: relative;
@@ -25,6 +26,15 @@ width: 100%;
 padding: 1rem;
 background-color: rgba(0, 0, 0, 0.137);
 border-radius: 1rem;
+height: 200px;
+
+margin-bottom: -8rem;
+}
+
+#itemLeft{
+
+    
+height: 200px;
 }
 
 #title {
@@ -60,7 +70,7 @@ border-radius: 1rem;
     font-size: 50pt;
     color: black;
     margin: 2rem;
-    margin-bottom: 20rem;
+    margin-bottom: 5rem;
     font-weight: 500;
 }
 
