@@ -23,7 +23,6 @@ const loginUser = asyncHandler(async (req, res) => {
 
   // Check for user email
   const user = await User.findOne({ email });
-
   if (user) {
     const auth = await bcrypt.compare(password, user.password);
     if (auth) {
@@ -43,6 +42,9 @@ const loginUser = asyncHandler(async (req, res) => {
 // return both user and any erroes as JSON doc
 const createUser = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
+
+  
+  if(password.length < 8) { return res.status(200).json({ message: "Password must be at least 8 characters"});}
 
   // check if user exists in db
   const userExists = await User.findOne({ email });
