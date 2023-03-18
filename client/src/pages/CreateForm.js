@@ -3,7 +3,7 @@ import 'react-bootstrap'
 import "../css/CreateForm.css"
 import { useState, } from 'react';
 import axios from 'axios'
-import Footer from '../components/Footer'
+import "../css/Home.css"
 const  API_URL = "https://coderyders-api.onrender.com"
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 function CreateForm(){
@@ -250,9 +250,15 @@ const handleRandom = (e) => {
             </div>
         </form>
     </div>
+    <div>
+      <footer className="createPgFooter">
+            <p>&copy;2023 CodeRyders | All Rights Reserved</p>
+      </footer>
+ 
+    </div>
 </div >
 
-<Footer />
+
 
 </>
     )
