@@ -23,6 +23,14 @@ p.login{
 footer.footer{
     text-align: center;
     font-size: 2rem;
+    margin-top: 7rem;
+    color: white;
+    margin-bottom: 4rem;
+}
+footer.createPgFooter{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 47rem;
     color: white;
     margin-bottom: 4rem;
 }
@@ -47,6 +55,12 @@ footer.footer {
     margin-bottom: 4rem;
     color: white;
     margin-top: 1.7rem;
+}
+footer.createPgFooter{
+  
+    font-size: 1.4rem;
+    margin-top: 4rem;
+ 
 }
 img.image{
     margin-top: 0rem;
