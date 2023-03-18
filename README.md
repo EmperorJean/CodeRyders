@@ -12,6 +12,14 @@ A Full-stack web application for doctors to keep track of patient records
 
 ## Optimizations
 
+**A More Accessible UI/UX:**  
+ Choose better color combinations with higher contrast and visibility for visually impaired (colorblind) users. And make HTML elements compatible with screen readers.
+
+**Adding More Utilities:** 
+Search Bar: Specific searching of key terms to find a set of patients
+Possible addition of "important tags" to make searching more efficient.
+Filtering Tool: Number range selection for Age, BMI, Zip Code, Brixia Score, Patient ID, and Exam ID. Check Boxes for Gender and allow a user to compare and contrast data between patients in similar groups
+
 
 ## Getting Started
 
